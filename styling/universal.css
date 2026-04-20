@@ -1,4 +1,7 @@
 body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     overflow: auto;
     font-family: "Oswald", sans-serif;
     color: white;
@@ -15,7 +18,7 @@ body{
     align-items: center;
     padding: 0.5% 3%;
     background-color: #111111;
-    max-width: 100wmax;
+    max-width: 100vw;
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid rgb(255, 255, 255,0.1);
