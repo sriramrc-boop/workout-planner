@@ -1,5 +1,5 @@
 #home-content{
-    height: 100vh;
+    height: 84.4vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,11 +40,10 @@
 }
 
 footer{
-    display: block;
+    box-sizing: border-box;
     text-align: center;
-    line-height:2;
     background-color: #111111;
     border-top: 1px solid rgb(255, 255, 255,0.1);
     margin-bottom: 0;
-    padding-bottom: 2px;
+    padding: 4px;
 }
