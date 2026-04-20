@@ -40,11 +40,11 @@
 }
 
 footer{
-    height: 4.9vh;
     display: block;
     text-align: center;
-    line-height: 1;
+    line-height:2;
     background-color: #111111;
     border-top: 1px solid rgb(255, 255, 255,0.1);
     margin-bottom: 0;
+    padding-bottom: 2px;
 }
