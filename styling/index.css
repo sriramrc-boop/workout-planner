@@ -1,0 +1,70 @@
+body{
+    font-family: "Oswald", sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #312166 0%, #05104a 100%);
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 3%;
+    background-color: #111111;
+    max-width: 100wmax;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255,0.1);
+}
+
+#navbar h1{
+    color:crimson;
+    font-size: 25px;
+}
+
+#navbar span{
+    color: white;
+}
+
+#navbar nav a{
+    padding: 8px;
+    text-decoration: none;
+    color: white;   
+    transition-duration: 500ms;
+}
+
+#navbar nav a:hover, #navbar nav a#active{
+    color:crimson;
+}
+
+#home-content{
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home-content h1{
+    font-size: 50px;
+}
+
+#streak{
+    border: 2px solid rgb(255, 217, 0);
+    background-color: rgb(255, 217, 0,0.3);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: rgb(255, 217, 0);
+}
+
+#get-started{
+    padding: 18px;
+    border: 1px solid crimson;
+    border-radius: 7px;
+    background-color: crimson;
+    font-size: 20px;
+    font-weight: bold;
+}
