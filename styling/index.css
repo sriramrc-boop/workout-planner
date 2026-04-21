@@ -1,3 +1,7 @@
+body{
+    overflow:hidden;
+}
+
 #home-content{
     flex: 1;
     display: flex;
