@@ -1,4 +1,4 @@
-body{
+/* body{
     overflow:hidden;
 }
 
@@ -42,12 +42,87 @@ body{
     box-shadow: 0 10px 20px rgba(220, 20, 60, 0.4);
     background-color: #ff1e4d;
 }
+ */
 
-footer{
-    box-sizing: border-box;
+ /* --- UPDATED CSS --- */
+
+.split-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: black;
+    gap: 0; /* Ensures no gap between the two sides */
+}
+
+/* Make the whole side a link */
+.split {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Allows H1 and P to stack */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    margin: 0;
+}
+
+/* Expand the hovered side */
+.split:hover {
+    flex: 1.8; /* Increased expansion for a more dramatic effect */
+}
+
+/* Dim the side that is NOT hovered */
+.split-container:hover .split:not(:hover) {
+    filter: brightness(0.4) grayscale(0.5);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    background-color: #111111;
-    border-top: 1px solid rgb(255, 255, 255,0.1);
-    margin-bottom: 0;
-    padding: 4px;
+    pointer-events: none; /* Keeps the click-through to the .split link */
+}
+
+.content h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 6vw; /* Slightly larger for the borderless look */
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    transition: transform 0.6s ease, color 0.6s ease;
+}
+
+.split:hover .content h1 {
+    transform: scale(1.1);
+    color: crimson; 
+}
+
+/* Sub-text styling */
+.content p {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.split:hover .content p {
+    opacity: 1;
+}
+
+.bg-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3; /* Darker default for better text contrast */
+    transition: opacity 0.7s ease;
+}
+
+.split:hover .bg-video {
+    opacity: 0.7; /* Brightens up when active */
 }

@@ -7,6 +7,7 @@ body{
     margin: 0;
     padding: 0;
     background: radial-gradient(circle at center, #312166 0%, #05104a 100%);
+    box-sizing: border-box;
     
 }
 
@@ -15,7 +16,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5% 3%;
+    padding: 0.01% 3%;
     background-color: #111111;
     max-width: 100vw;
     width: 100%;
@@ -55,7 +56,7 @@ body{
 }
 
 .about-section {
-    background-color: #000; /* Matches your header */
+    background-color: #000; 
     color: var(--text-light);
     padding: 80px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -109,7 +110,7 @@ body{
 
 .creators-box {
     padding: 30px;
-    background: rgba(230, 30, 67, 0.1); /* Subtle red tint */
+    background: rgba(230, 30, 67, 0.1); 
     border-radius: 10px;
 }
 
@@ -134,7 +135,6 @@ body{
     font-size: 0.9rem;
 }
 
-/* Mobile Friendly */
 @media (max-width: 768px) {
     .section-title { font-size: 2rem; }
     .about-grid { flex-direction: column; }

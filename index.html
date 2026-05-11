@@ -4,9 +4,14 @@
     <title>WORKOUTPLANNER</title>
     <link href="styling/index.css" rel="stylesheet">
     <link href="styling/universal.css" rel="stylesheet">
+    <link href="styling/cursor.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="js/cursor.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
     <section id="navbar">
         <h1><a href="index.html">WORKOUT<span>PLANNER</span></a></h1>
         <nav>
@@ -18,14 +23,26 @@
         </nav>
     </section>
 
-    <section id="home-content">
-        <div id="streak">Streak: 2 Days</div>
-        <h1>"Small effort, big results — every workout matters."</h1>
-        <a href="workout.html"><button id="get-started">Get Started</button></a>
-    </section>
+    <section id="home-content" class="split-container">
+        <a href="workout.html" class="split left">
+            <video muted loop class="bg-video">
+                <source src="videos/workout-home-bg.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1>WORKOUT</h1>
+                <p>Challenge Your Limits</p>
+            </div>
+        </a>
 
-    <footer>
-        <p>GYMFREAKS©</p>
-    </footer>
+        <a href="calculator.html" class="split right">
+            <video muted loop class="bg-video">
+                <source src="videos/calculator-home-bg.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1>CALCULATOR</h1>
+                <p>Track Your Progress</p>
+            </div>
+        </a>
+    </section>
 </body>
 </html>

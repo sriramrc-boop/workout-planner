@@ -1,0 +1,49 @@
+/* This targets everything: buttons, links, inputs, etc. */
+*, *::before, *::after {
+    cursor: none !important;
+}
+
+/* 1. Hide the default system cursor */
+html, body {
+    cursor: none !important;
+    height: 100%;
+    width: 100%;
+}
+
+/* 2. The Inner Dot */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: crimson;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none; /* Allows clicks to pass through to buttons */
+    transform: translate(-50%, -50%);
+}
+
+/* 3. The Outer Ring */
+.cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid white;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    /* Smooth transition for the hover expansion */
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border 0.3s;
+}
+
+/* 4. Hover State Styles */
+.cursor-ring.active {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(220, 20, 60, 0.2); /* Light crimson shade */
+    border: 1.5px solid crimson;
+}
+
+.cursor-dot.hidden {
+    opacity: 0;
+}
