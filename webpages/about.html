@@ -1,144 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkoutPlanner — About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-/* GLOBAL STYLES */
-.about-page {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 10%;
-    font-family: sans-serif;
-}
+  <style>
+    /* 1. DESIGN TOKENS */
+    :root {
+      --red: #e8003d;
+      --transition: 0.25s ease;
+    }
 
-.red-title {
-    color: #e61e43;
-    text-transform: uppercase;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+    [data-theme="dark"] {
+      --bg: #0c0c0c;
+      --surface: #181818;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #c8c8c8;
+      --heading: #ffffff;
+    }
 
-/* INTRO SECTION */
-.about-intro {
-    text-align: center;
-    margin-bottom: 80px;
-}
+    [data-theme="light"] {
+      --bg: #f8f8f8;
+      --surface: #ffffff;
+      --border: rgba(0, 0, 0, 0.1);
+      --text: #444;
+      --heading: #111;
+    }
 
-.about-intro h1 { font-size: 3.5rem; margin: 0; }
-.subtitle { color: #888; font-size: 1.2rem; }
+    /* 2. RESET & BASE */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, .logo { font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 
-/* STORY ROW (Z-Pattern) */
-.content-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 100px;
-}
+    /* 3. NAVIGATION */
+    nav {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 1.5rem; color: var(--heading); text-decoration: none; }
+    .logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 0.8rem; text-decoration: none; color: var(--text); text-transform: uppercase; font-weight: 500; }
+    .nav-links a.active { color: var(--red); }
 
-.text-box { flex: 2; line-height: 1.8; color: #ccc; }
+    /* Theme Toggle */
+    .toggle { width: 40px; height: 20px; border-radius: 20px; background: var(--red); border: none; cursor: pointer; position: relative; }
+    .toggle::before { content: ''; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; background: white; border-radius: 50%; transition: var(--transition); }
+    [data-theme="light"] .toggle::before { transform: translateX(20px); }
 
-.stat-box {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+    /* 4. HERO SECTION */
+    .hero { text-align: center; padding: 80px 0; background: #000; color: white; }
+    .hero h1 { font-size: 5rem; line-height: 1; }
+    .hero h1 span { color: var(--red); }
+    .hero p { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; opacity: 0.7; }
 
-.stat-item {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid #e61e43;
-}
+    /* 5. MISSION & STATS */
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 80px 0; align-items: center; }
+    .mission-headline { font-size: 4rem; line-height: 0.9; color: var(--heading); margin-bottom: 20px; }
+    .mission-headline em { font-style: normal; color: var(--red); }
+    
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .stat-card { background: var(--surface); padding: 30px; border: 1px solid var(--border); text-align: center; }
+    .stat-number { font-family: 'Bebas Neue'; font-size: 3rem; color: var(--red); }
+    .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
 
-/* FEATURES GRID */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 100px;
-}
+    /* 6. GOALS SECTION */
+    .goals-section { background: var(--surface); padding: 80px 0; border-top: 1px solid var(--border); }
+    .section-title { font-size: 2.5rem; margin-bottom: 40px; color: var(--heading); }
+    .goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .goal-card { padding: 20px; border-left: 3px solid var(--red); background: var(--bg); }
+    .goal-num { color: var(--red); font-weight: bold; font-size: 1.2rem; }
+    .goal-card h3 { font-size: 1rem; text-transform: uppercase; margin: 5px 0; color: var(--heading); }
 
-.feature {
-    background: #0a0a0a;
-    padding: 40px;
-    border: 1px solid #222;
-    transition: 0.3s;
-}
+    /* 7. TEAM SECTION */
+    .team-section { padding: 80px 0; }
+    .tabs { display: flex; gap: 10px; margin-bottom: 30px; }
+    .tab { padding: 10px 20px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-family: 'Bebas Neue'; letter-spacing: 1px; }
+    .tab.active { background: var(--red); color: white; border-color: var(--red); }
+    
+    .profile { display: none; background: var(--surface); padding: 40px; border: 1px solid var(--border); }
+    .profile.active { display: block; }
+    .profile h2 { font-size: 2.5rem; color: var(--heading); }
+    .profile-role { color: var(--red); font-weight: 500; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 15px; }
+    .profile-links { margin-top: 20px; display: flex; gap: 15px; }
+    .btn { text-decoration: none; color: var(--heading); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; border-bottom: 2px solid var(--red); }
 
-.feature:hover { border-color: #e61e43; background: #111; }
-.feature h3 { color: #fff; }
+    /* 8. FOOTER */
+    footer { padding: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
 
-/* TEAM SECTION */
-.team-section { text-align: center; }
-
-.team-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.name-pill {
-    background: #e61e43;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-
-    </style>
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .mission-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 3.5rem; }
+      nav { flex-direction: column; height: auto; padding: 20px; gap: 15px; }
+    }
+  </style>
 </head>
 <body>
-        
-<section class="about-page">
-    <div class="about-intro">
-        <h1>Transforming Fitness Together</h1>
-        <p class="subtitle">More than just a planner—we are your digital training partner.</p>
-    </div>
 
-    <div class="content-row">
-        <div class="text-box">
-            <h2 class="red-title">Our Story</h2>
-            <p>Started by a group of passionate developers and fitness enthusiasts, Workout Planner was born out of a simple need: an organized way to track progress without the clutter of traditional apps.</p>
-            <p>We combine modern web technology with proven athletic principles to help you stay on track, whether you are at home or in the gym.</p>
-        </div>
-        <div class="stat-box">
-            <div class="stat-item"><h3>2+</h3><p>Days Streak</p></div>
-            <div class="stat-item"><h3>100%</h3><p>Data Privacy</p></div>
-        </div>
+  <nav>
+    <a href="#" class="logo"><span>WORKOUT</span>PLANNER</a>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#" class="active">About</a>
+      <a href="#">Workout</a>
+      <a href="#">Calculator</a>
     </div>
+    <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+  </nav>
 
-    <div class="features-grid">
-        <div class="feature">
-            <i class="icon">📊</i>
-            <h3>Smart Progress</h3>
-            <p>Visualize your gains with interactive charts and streak tracking that keeps you motivated every single day.</p>
-        </div>
-        <div class="feature">
-            <i class="icon">🧮</i>
-            <h3>Precise Calculators</h3>
-            <p>From BMI to One-Rep Max, our tools are built for accuracy to ensure your training is backed by science.</p>
-        </div>
-        <div class="feature">
-            <i class="icon">📱</i>
-            <h3>Mobile First</h3>
-            <p>Access your workout plan anywhere. Our responsive design ensures a smooth experience on any device.</p>
-        </div>
-    </div>
+  <header class="hero">
+    <p>Who We Are</p>
+    <h1>ABOUT <span>US</span></h1>
+  </header>
 
-    <div class="team-section">
-        <h2 class="red-title">The Masterminds</h2>
-        <div class="team-container">
-            <span class="name-pill">Anirudh Satish</span>
-            <span class="name-pill">Sriram Ramesh C</span>
-            <span class="name-pill">Soorya H</span>
-            <span class="name-pill">Devanarayanan S M</span>
-        </div>
-    </div>
-</section>
+  <main class="container">
+    <!-- MISSION -->
+    <section class="mission-grid">
+      <div>
+        <h2 class="mission-headline">Built for <em>Athletes.</em> Driven by Data.</h2>
+        <p><strong>WorkoutPlanner</strong> was built on a single belief: every person deserves a training system that adapts to them.</p><br>
+        <p>We combine structured programming with intelligent tracking tools so you can plan smarter and measure every rep. No guesswork. Just precision-crafted progress.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Templates</div></div>
+        <div class="stat-card"><div class="stat-number">12K+</div><div class="stat-label">Users</div></div>
+        <div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Success</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Tracking</div></div>
+      </div>
+    </section>
+
+    <!-- GOALS -->
+    <section class="goals-section">
+      <h2 class="section-title">Our Goals</h2>
+      <div class="goals-grid">
+        <div class="goal-card"><div class="goal-num">01</div><h3>Personalised Planning</h3><p>Workout structures that flex around your schedule and goals.</p></div>
+        <div class="goal-card"><div class="goal-num">02</div><h3>Progress Transparency</h3><p>Clear, data-driven insight through our tracking tools.</p></div>
+        <div class="goal-card"><div class="goal-num">03</div><h3>Community</h3><p>Athletes holding each other to a higher standard.</p></div>
+        <div class="goal-card"><div class="goal-num">04</div><h3>Science-Backed</h3><p>Methods grounded in real exercise science.</p></div>
+        <div class="goal-card"><div class="goal-num">05</div><h3>Accessible</h3><p>Professional-grade planning that's free and intuitive.</p></div>
+        <div class="goal-card"><div class="goal-num">06</div><h3>Innovation</h3><p>Constantly refining the engine based on your feedback.</p></div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section">
+      <h2 class="section-title">Meet the Creators</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="showProfile('founder', this)">Founder</button>
+        <button class="tab" onclick="showProfile('dev', this)">Developer</button>
+        <button class="tab" onclick="showProfile('trainer', this)">Head Trainer</button>
+      </div>
+
+      <div id="profile-founder" class="profile active">
+        <h2>Alex Rivera</h2>
+        <div class="profile-role">Founder & CEO</div>
+        <p>Alex built WorkoutPlanner to provide a no-nonsense, coach-in-your-pocket experience for athletes who value data.</p>
+        <div class="profile-links"><a href="#" class="btn">LinkedIn</a><a href="#" class="btn">Twitter</a></div>
+      </div>
+
+      <div id="profile-dev" class="profile">
+        <h2>Jordan Kim</h2>
+        <div class="profile-role">Lead Developer</div>
+        <p>Jordan architects the high-performance engine behind our calculators and analytics dashboards.</p>
+        <div class="profile-links"><a href="#" class="btn">GitHub</a><a href="#" class="btn">LinkedIn</a></div>
+      </div>
+
+      <div id="profile-trainer" class="profile">
+        <h2>Sam Torres</h2>
+        <div class="profile-role">Head Trainer</div>
+        <p>Sam designs the programming frameworks, ensuring every template is rooted in 10+ years of coaching expertise.</p>
+        <div class="profile-links"><a href="#" class="btn">Instagram</a><a href="#" class="btn">YouTube</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"><span>WORKOUT</span>PLANNER</div>
+    <p>© 2025 WorkoutPlanner</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+
+    function showProfile(id, clickedTab) {
+      document.querySelectorAll('.profile').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('profile-' + id).classList.add('active');
+      clickedTab.classList.add('active');
+    }
+  </script>
 </body>
 </html>
