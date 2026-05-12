@@ -1,129 +1,144 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<body>
+<head>
     <style>
-:root {
-    --accent-red: #e61e43;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --text-light: #ffffff;
-    --text-gray: #b0b0b0;
+
+/* GLOBAL STYLES */
+.about-page {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 10%;
+    font-family: sans-serif;
 }
 
-.about-section {
-    background-color: #000; /* Matches your header */
-    color: var(--text-light);
-    padding: 80px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.red-title {
+    color: #e61e43;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+/* INTRO SECTION */
+.about-intro {
     text-align: center;
+    margin-bottom: 80px;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+.about-intro h1 { font-size: 3.5rem; margin: 0; }
+.subtitle { color: #888; font-size: 1.2rem; }
 
-.about-grid {
+/* STORY ROW (Z-Pattern) */
+.content-row {
     display: flex;
-    gap: 30px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
 }
 
-.about-card {
+.text-box { flex: 2; line-height: 1.8; color: #ccc; }
+
+.stat-box {
     flex: 1;
-    min-width: 300px;
-    background: var(--glass-bg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-item {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #e61e43;
+}
+
+/* FEATURES GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.feature {
+    background: #0a0a0a;
     padding: 40px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
-.about-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-red);
-}
+.feature:hover { border-color: #e61e43; background: #111; }
+.feature h3 { color: #fff; }
 
-.about-card h3 {
-    color: var(--accent-red);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
+/* TEAM SECTION */
+.team-section { text-align: center; }
 
-.about-card p {
-    line-height: 1.6;
-    color: var(--text-gray);
-}
-
-.creators-box {
-    padding: 30px;
-    background: rgba(230, 30, 67, 0.1); /* Subtle red tint */
-    border-radius: 10px;
-}
-
-.creators-box h3 {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
-
-.creator-names {
+.team-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
-    font-weight: bold;
+    margin-top: 30px;
 }
 
-.creator-names span {
-    background: var(--accent-red);
-    padding: 8px 20px;
-    border-radius: 50px;
+.name-pill {
+    background: #e61e43;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
     font-size: 0.9rem;
 }
 
-/* Mobile Friendly */
-@media (max-width: 768px) {
-    .section-title { font-size: 2rem; }
-    .about-grid { flex-direction: column; }
-}
- </style>
-<section id="about" class="about-section">
-    <div class="container">
-        <h2 class="section-title">About Our Mission</h2>
+
+    </style>
+</head>
+<body>
         
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>Our Goal</h3>
-                <p>To empower individuals to take control of their fitness journey through smart, data-driven planning. We believe that consistency is the key to transformation, and our tools are designed to make every rep count.</p>
-            </div>
+<section class="about-page">
+    <div class="about-intro">
+        <h1>Transforming Fitness Together</h1>
+        <p class="subtitle">More than just a planner—we are your digital training partner.</p>
+    </div>
 
-            <div class="about-card">
-                <h3>Why WorkoutPlanner?</h3>
-                <p>We realized that many fitness apps are over-complicated. We created this platform to strip away the noise, focusing on clean design and essential features like streak tracking and precise calculators to keep you motivated.</p>
-            </div>
+    <div class="content-row">
+        <div class="text-box">
+            <h2 class="red-title">Our Story</h2>
+            <p>Started by a group of passionate developers and fitness enthusiasts, Workout Planner was born out of a simple need: an organized way to track progress without the clutter of traditional apps.</p>
+            <p>We combine modern web technology with proven athletic principles to help you stay on track, whether you are at home or in the gym.</p>
         </div>
+        <div class="stat-box">
+            <div class="stat-item"><h3>2+</h3><p>Days Streak</p></div>
+            <div class="stat-item"><h3>100%</h3><p>Data Privacy</p></div>
+        </div>
+    </div>
 
-        <div class="creators-box">
-            <h3>The Creators</h3>
-            <div class="creator-names">
-                <span>Anirudh Satish</span>
-                <span>Sriram Ramesh C</span>
-                <span>Soorya H</span>
-                <span>Devanarayanan S M</span>
-            </div>
+    <div class="features-grid">
+        <div class="feature">
+            <i class="icon">📊</i>
+            <h3>Smart Progress</h3>
+            <p>Visualize your gains with interactive charts and streak tracking that keeps you motivated every single day.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">🧮</i>
+            <h3>Precise Calculators</h3>
+            <p>From BMI to One-Rep Max, our tools are built for accuracy to ensure your training is backed by science.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">📱</i>
+            <h3>Mobile First</h3>
+            <p>Access your workout plan anywhere. Our responsive design ensures a smooth experience on any device.</p>
+        </div>
+    </div>
+
+    <div class="team-section">
+        <h2 class="red-title">The Masterminds</h2>
+        <div class="team-container">
+            <span class="name-pill">Anirudh Satish</span>
+            <span class="name-pill">Sriram Ramesh C</span>
+            <span class="name-pill">Soorya H</span>
+            <span class="name-pill">Devanarayanan S M</span>
         </div>
     </div>
 </section>
- 
 </body>
 </html>
