@@ -124,5 +124,34 @@
         </div>
     </div>
 </section>
+<script>
+
+const pills = document.querySelectorAll('.creator-pill');
+document.getElementById('team-count').innerText = pills.length;
+
+const hour = new Date().getHours();
+const welcome = document.getElementById('welcome-msg');
+
+if (hour < 12) {
+    welcome.innerText = "Good Morning, Athlete!";
+} else if (hour < 18) {
+    welcome.innerText = "Good Afternoon, Athlete!";
+} else {
+    welcome.innerText = "Good Evening, Athlete!";
+}
+
+function highlight(element) {
+    element.style.borderColor = "#e61e43"; // Turns border red on hover
+    element.style.transform = "scale(1.05)"; // Makes it slightly bigger
+}
+
+function removeHighlight(element) {
+    element.style.borderColor = "transparent";
+    element.style.transform = "scale(1)";
+}
+
+
+
+</script>
 </body>
 </html>
