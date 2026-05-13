@@ -4,98 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WorkoutPlanner — About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="about.css" />
 <script src="about.js"></script>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="logo"><span>WORKOUT</span>PLANNER</a>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#" class="active">About</a>
-      <a href="#">Workout</a>
-      <a href="#">Calculator</a>
+    <div class="container" style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+      <a href="#" class="nav-logo">WORKOUT<span>PLANNER</span></a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#" style="color:white;">About</a>
+        <a href="#">Calculator</a>
+        <a href="#">Workouts</a>
+      </div>
     </div>
-    <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
   </nav>
 
   <header class="hero">
-    <p>Who We Are</p>
-    <h1>ABOUT <span>US</span></h1>
+    <div class="container">
+      <div class="hero-sub">The Architects of Iron</div>
+      <h1>MEET THE <span>CREATORS</span></h1>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- MISSION -->
-    <section class="mission-grid">
-      <div>
-        <h2 class="mission-headline">Built for <em>Athletes.</em> Driven by Data.</h2>
-        <p><strong>WorkoutPlanner</strong> was built on a single belief: every person deserves a training system that adapts to them.</p><br>
-        <p>We combine structured programming with intelligent tracking tools so you can plan smarter and measure every rep. No guesswork. Just precision-crafted progress.</p>
+  <section class="team-section">
+    <div class="container">
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="member-card">
+          <h3>ANIRUDH SATISH</h3>
+          <p>1ST YEAR CSE-B</p>
+        </div>
+        <!-- Member 2 -->
+        <div class="member-card">
+          <h3>DEVANARAYANAN S M</h3>
+          <p>1ST YEAR CSE-B</p>
+        </div>
+        <!-- Member 3 -->
+        <div class="member-card">
+          <h3>SOORYA H</h3>
+          <p>1ST YEAR CSE-B</p>
+        </div>
+        <!-- Member 4 -->
+        <div class="member-card">
+          <h3>SRIRAM RAMESH C</h3>
+          <p>1ST YEAR CSE-B</p>
+        </div>
       </div>
-      <div class="stats-grid">
-        <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Templates</div></div>
-        <div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Success</div></div>
-        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Tracking</div></div>
-      </div>
-    </section>
-
-    <!-- GOALS -->
-    <section class="goals-section">
-      <h2 class="section-title">Our Goals</h2>
-      <div class="goals-grid">
-        <div class="goal-card"><div class="goal-num">01</div><h3>Personalised Planning</h3><p>Workout structures that flex around your schedule and goals.</p></div>
-        <div class="goal-card"><div class="goal-num">02</div><h3>Progress Transparency</h3><p>Clear, data-driven insight through our tracking tools.</p></div>
-        <div class="goal-card"><div class="goal-num">03</div><h3>Community</h3><p>Athletes holding each other to a higher standard.</p></div>
-        <div class="goal-card"><div class="goal-num">04</div><h3>Science-Backed</h3><p>Methods grounded in real exercise science.</p></div>
-        <div class="goal-card"><div class="goal-num">05</div><h3>Accessible</h3><p>Professional-grade planning that's free and intuitive.</p></div>
-        <div class="goal-card"><div class="goal-num">06</div><h3>Innovation</h3><p>Constantly refining the engine based on your feedback.</p></div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section class="team-section">
-  <div class="container">
-    <h2 class="soothing-title">The Project Team</h2>
-    <div class="team-grid">
-      
-      <!-- Member 1 -->
-      <div class="member-card">
-        <h3>Anirudh Satish</h3>
-        <p class="designation">1st Year CSE-B</p>
-        <div class="card-line"></div>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="member-card">
-        <h3>Devanarayanan S M</h3>
-        <p class="designation">1st Year CSE-B</p>
-        <div class="card-line"></div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="member-card">
-        <h3>Soorya H</h3>
-        <p class="designation">1st Year CSE-B</p>
-        <div class="card-line"></div>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="member-card">
-        <h3>Sriram Ramesh C</h3>
-        <p class="designation">1st Year CSE-B</p>
-        <div class="card-line"></div>
-      </div>
-
     </div>
-  </div>
-</section>
-  </main>
+  </section>
 
   <footer>
-    <div class="logo"><span>WORKOUT</span>PLANNER</div>
-    <p>© 2025 WorkoutPlanner</p>
+    <div class="container">
+      <div class="nav-logo footer-logo">WORKOUT<span>PLANNER</span></div>
+      <p>© 2026 Crafted by Team CSE-B. All Rights Reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>
