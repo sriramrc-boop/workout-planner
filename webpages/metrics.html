@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Calcs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/metrics.css">
+    <link rel="stylesheet" href="../styling/cursor.css">
+    <link rel="stylesheet" href="../styling/universal.css">
+</head>
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+    
+    <div class="video-background">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted playsinline>
+            <source src="../videos/matrics-bg-vid.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <section id="navbar">
+        <a href="about.html">ABOUT</a>
+        <a href="workout.html">WORKOUT</a>
+        <div id="logo"><a href="../index.html">W<span>P</span></a></div>
+        <a href="metrics.html">METRICS</a>
+        <a href="contact.html">CONTACT</a>    
+    </section>
+
+    <h1 class="main-title">BODY <span class="red-text">METRICS</span></h1>
+
+    <div class="calculator-selector">
+        <button class="mode-btn active" onclick="showCalc('bmi', this)">BMI</button>
+        <button class="mode-btn" onclick="showCalc('maint', this)">MAINTENANCE</button>
+        <button class="mode-btn" onclick="showCalc('def', this)">DEFICIT</button>
+    </div>
+
+    <div class="main-display-container">
+        
+        <div id="bmi-section" class="calc-mode-wrapper active">
+            <div class="info-box">
+                <h3>BMI SCALE</h3>
+                <p>A rapid metric to gauge weight relative to height.</p>
+                <table class="bmi-table">
+                    <tr><th>BMI</th><th>STATUS</th></tr>
+                    <tr><td>&lt; 18.5</td><td>UNDERWEIGHT</td></tr>
+                    <tr><td>18.5 - 24.9</td><td>HEALTHY</td></tr>
+                    <tr><td>25.0 - 29.9</td><td>OVERWEIGHT</td></tr>
+                    <tr><td>30.0+</td><td>OBESE</td></tr>
+                </table>
+                <p class="senior-note">
+                    <span class="red-text">SENIORS (65+):</span> Healthy range is <span class="red-text">22 - 27</span>.
+                </p>
+            </div>
+            <div class="box">
+                <h3>GET YOUR INDEX</h3>
+                <input type="text" inputmode="decimal" id="w-bmi" placeholder="Weight (kg)">
+                <input type="text" inputmode="decimal" id="h-bmi" placeholder="Height (cm)">
+                <input type="text" inputmode="decimal" id="age-bmi" placeholder="Age">
+                <button onclick="calcBMI()">CALCULATE</button>
+                <p id="out-bmi"></p>
+            </div>
+        </div>
+
+        <div id="maint-section" class="calc-mode-wrapper">
+    <div class="info-box">
+        <h3>DAILY MAINTENANCE CALORIES</h3>
+        <p>Your <strong>TDEE</strong> (Total Daily Energy Expenditure) is the total fuel needed to maintain your current physique. It combines your <strong>BMR</strong> (resting metabolism) with the <strong>Thermic Effect</strong> (calories burned during digestion) of your nutrition.</p>
+        
+        <ul class="gym-list">
+            <li><span class="red-text">RECOMPOSITION:</span> The "Sweet Spot" for building muscle and shedding fat simultaneously without the scale moving.</li>
+            <li><span class="red-text">RECOVERY:</span> Proper maintenance fuel prevents metabolic burnout and keeps your training intensity at peak levels.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <h3>DAILY FUEL</h3>
+        <select id="gen">
+            <option value="5">MALE</option>
+            <option value="-161">FEMALE</option>
+        </select>
+        <input type="text" inputmode="decimal" id="w-m" placeholder="Weight (kg)">
+        <input type="text" inputmode="decimal" id="h-m" placeholder="Height (cm)">
+        <input type="text" id="age" placeholder="Age">
+        <select id="level">
+            <option value="1.2">SEDENTARY</option>
+            <option value="1.375">LIGHTLY ACTIVE</option>
+            <option value="1.55">MODERATELY ACTIVE</option>
+            <option value="1.725">VERY ACTIVE</option>
+        </select>
+        <button onclick="calcMaint()">FIND MAINTENANCE</button>
+        <p id="out-maint"></p>
+    </div>
+</div>
+
+        <div id="def-section" class="calc-mode-wrapper">
+            <div class="info-box">
+                <h3>CALORIE DEFICIT</h3>
+                <p>To force your body to utilize stored adipose tissue (fat) for energy, you must create an energy gap. This tool calculates that gap with surgical precision.</p>
+                <ul class="gym-list">
+                    <li><span class="red-text">THE 500 RULE:</span> A 500kcal deficit is the "Gold Standard" for losing ~0.5kg of fat per week without losing muscle.</li>
+                    <li><span class="red-text">SUSTAINABILITY:</span> Aggressive deficits (>750kcal) often lead to burnout and metabolic slowdown.</li>
+                    <li><span class="red-text">PROTEIN:</span> Always pair a deficit with high protein to protect your gains.</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>DEFICIT TARGET</h3>
+                <select id="gen-def">
+                    <option value="5">MALE</option>
+                    <option value="-161">FEMALE</option>
+                </select>
+                <input type="text" inputmode="decimal" id="w-def" placeholder="Weight (kg)">
+                <input type="text" inputmode="decimal" id="h-def" placeholder="Height (cm)">
+                <input type="text" id="age-def" placeholder="Age">
+                <select id="level-def">
+                    <option value="1.2">SEDENTARY</option>
+                    <option value="1.375">LIGHTLY ACTIVE</option>
+                    <option value="1.55">MODERATELY ACTIVE</option>
+                    <option value="1.725">VERY ACTIVE</option>
+                </select>
+                <input type="text" id="goal-in" placeholder="Daily Deficit (e.g. 500)">
+                <button onclick="calcDeficit()">CALCULATE TARGET</button>
+                <p id="out-def"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/metrics.js"></script> 
+    <script src="../js/cursor.js"></script>
+</body>
+</html>

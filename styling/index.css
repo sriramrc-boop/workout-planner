@@ -15,8 +15,6 @@
     margin: 0;
     letter-spacing: 5px;
     text-transform: uppercase;
-    /* Optional: Adds a subtle lift from the background */
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
 }
 
 .bg-video {

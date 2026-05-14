@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,22 +13,28 @@
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-ring" id="cursor-ring"></div>
 
-    <nav id="navbar">
-        <h1><a href="../index.html">WORKOUT<span>PLANNER</span></a></h1>
-        <div class="nav-links">
-            <a href="../index.html">HOME</a>
-            <a href="about.html" id="active">ABOUT</a>
-            <a href="../workout.html">WORKOUT</a>
-            <a href="../webpages/calc.html">CALCULATOR</a>
-            <a href="../contact.html">CONTACT</a>
-        </div>
-    </nav>
+    <section id="navbar">
+        <a href="about.html">ABOUT</a>
+        <a href="workout.html">WORKOUT</a>
+        <div id="logo"><a href="../index.html">W<span>P</span></a></div>
+        <a href="metrics.html">METRICS</a>
+        <a href="contact.html">CONTACT</a>    
+    </section>
 
     <main class="about-container">
-        <header class="hero-section">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline id="myVideo">
+                <source src="../videos/home-bg-video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <!-- Overlay to keep the "dark" theme consistent -->
+            <div class="video-overlay"></div>
+        </div>
+
+        <div class="hero-section">
             <h1 class="main-title">ABOUT US<span>.</span></h1>
             <p class="subtitle">ENGINEERING THE FUTURE OF PERSONAL FITNESS</p>
-        </header>
+        </div>
 
         <section class="info-section reveal">
             <div class="label">OUR MISSION</div>
@@ -39,6 +45,19 @@
                 </p>
                 <p>
                     We didn't just build a tracker; we built a performance engine. By leveraging 60FPS hardware-accelerated animations and a data-first architecture, we've created a space where your focus remains entirely on your progress. No ads, no noise—just pure engineering.
+                </p>
+            </div>
+        </section>
+
+        <section class="info-section reveal">
+            <div class="label">OUR VISION & GOAL</div>
+            <h2 class="title-bg">Bridging Logic and Fitness</h2>
+            <div class="content-split">
+                <p>
+                    Our primary goal is to strip away the unnecessary complexity of modern fitness apps. We set out to build a high-performance web application that provides users with exactly what they need: scientific precision, speed, and uncompromised reliability. 
+                </p>
+                <p>
+                    As a team of first-year B.Tech Computer Science students at Amrita Vishwa Vidyapeetham, this project serves as our crucible. It's where we translate theoretical STEM concepts into a clean, responsive, and seamlessly crafted user interface. We are building digital experiences that bridge the gap between complex logic and clean design.
                 </p>
             </div>
         </section>
@@ -54,7 +73,7 @@
             </div>
             <div class="grid-card">
                 <h3>03. Performance</h3>
-                <p>Built using the React engine, the interface responds at the speed of thought. Low-latency interactions ensure that logging a set never interrupts your heart rate.</p>
+                <p>Built using modern web engines, the interface responds at the speed of thought. Low-latency interactions ensure that logging a set never interrupts your heart rate.</p>
             </div>
         </section>
 
@@ -67,7 +86,7 @@
                 </div>
                 <div class="arch-item">
                     <h4>Logic Engine</h4>
-                    <p>Sophisticated JavaScript modules handle complex mathematical formulas for fitness analytics.</p>
+                    <p>Sophisticated JavaScript modules handle complex mathematical formulas for fitness analytics without convoluted validation checks.</p>
                 </div>
                 <div class="arch-item">
                     <h4>Visual Language</h4>
@@ -78,26 +97,28 @@
 
         <section class="team-section reveal">
             <h2 class="title-bg">The Engineering Team</h2>
+            <p class="team-subtitle text-center" style="margin-bottom: 2rem; color: #888;">First-Year B.Tech Computer Science Cohort</p>
+            
             <div class="team-grid">
                 <div class="creator-card">
                     <div class="avatar">SR</div>
                     <h4>Sriram Ramesh C</h4>
-                    <p>Lead System Architect</p>
+                    <p>Team Coordinator</p>
                 </div>
                 <div class="creator-card">
-                    <div class="avatar">D2</div>
-                    <h4>Developer 02</h4>
-                    <p>UI/UX Engineer</p>
+                    <div class="avatar">DS</div>
+                    <h4>Devanarayanan S M</h4>
+                    <p>Team member 1</p>
                 </div>
                 <div class="creator-card">
-                    <div class="avatar">D3</div>
-                    <h4>Developer 03</h4>
-                    <p>Backend Logic Specialist</p>
+                    <div class="avatar">SH</div>
+                    <h4>Soorya H</h4>
+                    <p>Team member 2</p>
                 </div>
                 <div class="creator-card">
-                    <div class="avatar">D4</div>
-                    <h4>Developer 04</h4>
-                    <p>Database & State Manager</p>
+                    <div class="avatar">AS</div>
+                    <h4>Anirudh Satish</h4>
+                    <p>Team member 3</p>
                 </div>
             </div>
         </section>

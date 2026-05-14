@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — WorkoutPlanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="../styling/contact.css" rel="stylesheet">
+<link href="../styling/cursor.css" rel="stylesheet">
+<link href="../styling/universal.css" rel="stylesheet">
+<script src="../js/contact.js"></script>
+<script src="../js/cursor.js"></script>
+</head>
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <section id="navbar">
+        <a href="about.html">ABOUT</a>
+        <a href="workout.html">WORKOUT</a>
+        <div id="logo"><a href="../index.html">W<span>P</span></a></div>
+        <a href="metrics.html">METRICS</a>
+        <a href="contact.html">CONTACT</a>    
+    </section>
+
+    <section id="contact">
+
+        <div class="contact-header">
+            <div class="contact-title-wrap">
+                <p class="contact-eyebrow">Get In Touch</p>
+                <h2 class="contact-title">CON<span>TACT</span></h2>
+            </div>
+        </div>
+
+        <div class="contact-body">
+
+            <div class="info-panel">
+            <div class="info-block">
+                <div class="info-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="info-text">
+                <label>Email Us</label>
+                <p>workoutplannerhelp@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 5.18 2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17v-.08z"/></svg>
+                </div>
+                <div class="info-text">
+                <label>Call Us</label>
+                <p>+91 8318318422</p>
+                </div>
+            </div>
+
+            <div class="social-row">
+                <a href="#" class="social-btn" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="Twitter">
+                <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="YouTube">
+                <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+            </div>
+            </div>
+
+            <div class="form-panel">
+            <h3>Send A Message</h3>
+
+            <div id="contact-form">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;">
+                <div class="form-group">
+                    <input type="text" id="fname" placeholder=" ">
+                    <label for="fname">First Name</label>
+                    <span class="error-msg">Please enter your first name</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lname" placeholder=" ">
+                    <label for="lname">Last Name</label>
+                    <span class="error-msg">Please enter your last name</span>
+                </div>
+                </div>
+
+                <div class="form-group">
+                <input type="email" id="email" placeholder=" ">
+                <label for="email">Email Address</label>
+                <span class="error-msg">Please enter a valid email address</span>
+                </div>
+
+                <div class="form-group">
+                <input type="text" id="subject" placeholder=" ">
+                <label for="subject">Subject</label>
+                <span class="error-msg">Please enter a subject</span>
+                </div>
+
+                <div class="form-group">
+                <textarea id="message" placeholder=" "></textarea>
+                <label for="message">Your Message</label>
+                <span class="error-msg">Please write your message</span>
+                </div>
+
+                <div class="submit-wrap">
+                <button class="btn-submit" onclick="handleSubmit()">SEND IT →</button>
+                <span class="btn-hint">We reply within 24hrs</span>
+                </div>
+            </div>
+
+            <div class="form-success" id="success-msg">
+                <div class="success-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h4>MESSAGE SENT</h4>
+                <p>We'll get back to you within 24 hours.<br>Time to hit the gym while you wait.</p>
+            </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
