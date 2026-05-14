@@ -4,6 +4,9 @@
     font-family: 'Oswald', sans-serif;
     padding: 0 10% 100px;
     overflow-x: hidden;
+    background: linear-gradient(-45deg, #050505, #1a0000, #050505, #000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
 /* HERO */
@@ -99,4 +102,9 @@
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
