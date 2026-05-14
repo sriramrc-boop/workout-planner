@@ -1,13 +1,4 @@
-.about-container {
-    background-color: #050505;
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    padding: 0 10% 100px;
-    overflow-x: hidden;
-    background: linear-gradient(-45deg, #050505, #1a0000, #050505, #000);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
+
 
 /* HERO */
 .hero-section {
@@ -107,4 +98,61 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+.about-container {
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    padding: 0 10% 100px;
+    overflow-x: hidden;
+    
+    /* NEW: Kinetic Muscle Background */
+    /* Simulates a deep, breathing red aura in the center */
+    background: radial-gradient(circle at 50% 50%, #1a0000 0%, #050505 80%);
+    background-size: 150% 150%;
+    animation: musclePump 10s ease-in-out infinite;
+    position: relative;
+}
+
+/* Sub-grid overlay to give an "Engineering" and "Gym Floor" look */
+.about-container::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 26, 26, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* The Animation: A slow, rhythmic expansion like a heavy breath */
+@keyframes musclePump {
+    0% { background-position: 50% 50%; filter: brightness(1); }
+    50% { background-position: 55% 45%; filter: brightness(1.4); }
+    100% { background-position: 50% 50%; filter: brightness(1); }
+}
+
+ .reveal {
+    opacity: 0;
+    filter: blur(15px); 
+    transform: translateY(60px) scale(0.98);
+    transition: 
+        opacity 1.2s ease-out, 
+        transform 1s cubic-bezier(0.19, 1, 0.22, 1), 
+        filter 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+}
+
+ .grid-card:hover {
+    border-color: crimson;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.15);
 }
