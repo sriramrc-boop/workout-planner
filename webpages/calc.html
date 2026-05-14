@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/calc.css">
+    <link rel="stylesheet" href="../styling/cursor.css">
+</head>
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+    <nav id="navbar">
+        <h1><a href="../index.html">WORKOUT<span>PLANNER</span></a></h1>
+        <div class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html" id="active">ABOUT</a>
+            <a href="workout.html">WORKOUT</a>
+            <a href="calc.html">CALCULATOR</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
+    <h1 class="main-title">WORKOUT<span class="red-text">CALCULATORS</span></h1>
+
+    <div class="container">
+        <div class="box">
+            <h3>BMI INDEX</h3>
+            <input type="text" inputmode="decimal" id="w-bmi" placeholder="Weight (kg)">
+            <input type="text" inputmode="decimal" id="h-bmi" placeholder="Height (cm)">
+            <button onclick="calcBMI()">CALCULATE</button>
+            <p id="out-bmi"></p>
+        </div>
+
+        <div class="box">
+            <h3>MAINTENANCE (DAILY ENERGY EXPENDITURE)</h3>
+            <select id="gen">
+                <option value="5">MALE</option>
+                <option value="-161">FEMALE</option>
+            </select>
+            <input type="text" inputmode="decimal" id="w-m" placeholder="Weight (kg)">
+            <input type="text" inputmode="decimal" id="h-m" placeholder="Height (cm)">
+            <input type="text" inputmode="decimal" id="age" placeholder="Age">
+            <select id="level">
+                <option value="1.2">SEDENTARY</option>
+                <option value="1.375">LIGHTLY ACTIVE</option>
+                <option value="1.55">MODERATELY ACTIVE</option>
+                <option value="1.725">VERY ACTIVE</option>
+            </select>
+            <button onclick="calcMaint()">CALCULATE</button>
+            <p id="out-maint"></p>
+        </div>
+
+        <div class="box">
+            <h3>CALORIE DEFICIT</h3>
+            <input type="text" inputmode="decimal" id="maint-in" placeholder="Maintenance kcal">
+            <input type="text" inputmode="decimal" id="goal-in" placeholder="Daily Deficit (e.g. 500)">
+            <button onclick="calcDeficit()">CALCULATE</button>
+            <p id="out-def"></p>
+        </div>
+    </div>
+
+    <script src="../js/calc.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+</html>

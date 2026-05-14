@@ -1,0 +1,102 @@
+.about-container {
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    padding: 0 10% 100px;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero-section {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-title {
+    font-size: clamp(5rem, 15vw, 10rem);
+    line-height: 0.8;
+    margin: 0;
+}
+
+.main-title span { color: crimson; }
+
+.subtitle {
+    color: crimson;
+    letter-spacing: 5px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* SECTIONS */
+.info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
+.label { color: crimson; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 20px; }
+.title-bg { font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
+
+.content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    font-size: 1.3rem;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* CARDS */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 100px 0;
+}
+
+.grid-card {
+    background: #0f0f0f;
+    padding: 40px;
+    border: 1px solid #1a1a1a;
+    transition: 0.4s;
+}
+
+.grid-card:hover { border-color: crimson; transform: translateY(-10px); }
+.grid-card h3 { color: crimson; margin-bottom: 20px; }
+
+/* ARCHITECTURE */
+.arch-list { margin-top: 40px; }
+.arch-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid crimson; }
+.arch-item h4 { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
+
+/* TEAM GRID */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.creator-card {
+    background: #0f0f0f;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid #1a1a1a;
+    transition: 0.4s;
+}
+
+.creator-card:hover { border-color: crimson; background: #141414; }
+.avatar {
+    width: 80px; height: 80px; background: #1a1a1a; margin: 0 auto 20px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: crimson; font-weight: bold; border: 1px solid crimson;
+}
+
+/* REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

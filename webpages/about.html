@@ -1,64 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WorkoutPlanner — About</title>
-<link rel="stylesheet" href="about.css" />
-<script src="about.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | WORKOUTPLANNER</title>
+    <link rel="stylesheet" href="../styling/universal.css">
+    <link rel="stylesheet" href="../styling/cursor.css">
+    <link rel="stylesheet" href="../styling/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
-  <nav>
-    <div class="container" style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-      <a href="#" class="nav-logo">WORKOUT<span>PLANNER</span></a>
-      <div style="letter-spacing: 3px; font-size: 0.7rem; color: var(--text-dim);">PROJECT SOURCE v1.0</div>
-    </div>
-  </nav>
-
-  <!-- THE WHY: PURPOSE SECTION -->
-  <section class="purpose-section">
-    <div class="container">
-      <div class="purpose-grid">
-        <div class="purpose-content">
-          <div class="accent-bar"></div>
-          <h2>WHY WE <br><span style="color:var(--primary)">BUILT THIS.</span></h2>
-          <p>We realized that most fitness apps were either too complex or too shallow. As developers and athletes, we wanted a "no-nonsense" environment where data drives progress.</p>
-          <p>WorkoutPlanner was created to be the bridge between raw ambition and tactical execution. We built this to give you a command center for your physical evolution.</p>
+    <nav id="navbar">
+        <h1><a href="../index.html">WORKOUT<span>PLANNER</span></a></h1>
+        <div class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html" id="active">ABOUT</a>
+            <a href="../workout.html">WORKOUT</a>
+            <a href="../webpages/calc.html">CALCULATOR</a>
+            <a href="../contact.html">CONTACT</a>
         </div>
-        <div class="quote-grid">
-          <div class="quote-card">
-            <h3>THE DATA</h3>
-            <blockquote>"The iron never lies, and with the right data, neither will your progress. We provide the metrics; you provide the sweat."</blockquote>
-          </div>
-          <div class="quote-card">
-            <h3>THE VISION</h3>
-            <blockquote>"Greatness is a series of well-planned battles. We built the strategy—it's up to you to lead the charge."</blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- THE TEAM: CREATORS -->
-  <section class="team-section">
-    <div class="container">
-      <h2 style="font-size: 3.5rem;">THE ARCHITECTS</h2>
-      <div class="team-grid">
-        <div class="member-card"><h3>ANIRUDH SATISH</h3><p>1ST YEAR CSE-B</p></div>
-        <div class="member-card"><h3>DEVANARAYANAN S M</h3><p>1ST YEAR CSE-B</p></div>
-        <div class="member-card"><h3>SOORYA H</h3><p>1ST YEAR CSE-B</p></div>
-        <div class="member-card"><h3>SRIRAM RAMESH C</h3><p>1ST YEAR CSE-B</p></div>
-      </div>
-    </div>
-  </section>
+    <main class="about-container">
+        <header class="hero-section">
+            <h1 class="main-title">ABOUT US<span>.</span></h1>
+            <p class="subtitle">ENGINEERING THE FUTURE OF PERSONAL FITNESS</p>
+        </header>
 
-  <footer>
-    <div class="container">
-      <p>CRAFTED BY TEAM CSE-B | EST. 2026</p>
-      <p style="margin-top:10px; opacity: 0.5;">ELIMINATE THE GUESSWORK. MAXIMIZE THE GAINS.</p>
-    </div>
-  </footer>
+        <section class="info-section reveal">
+            <div class="label">OUR MISSION</div>
+            <h2 class="title-bg">The "Why" Behind The Platform</h2>
+            <div class="content-split">
+                <p>
+                    In an era where fitness applications are cluttered with social distractions and predatory subscription models, <strong>WORKOUTPLANNER</strong> stands as a monolith of focus. Our platform was conceived during a deep-dive into UI/UX engineering, where we asked: <em>"Can software be as disciplined as an athlete?"</em>
+                </p>
+                <p>
+                    We didn't just build a tracker; we built a performance engine. By leveraging 60FPS hardware-accelerated animations and a data-first architecture, we've created a space where your focus remains entirely on your progress. No ads, no noise—just pure engineering.
+                </p>
+            </div>
+        </section>
 
+        <section class="grid-section reveal">
+            <div class="grid-card">
+                <h3>01. Precision</h3>
+                <p>Our algorithms calculate Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) with scientific accuracy, ensuring your targets are never based on guesswork.</p>
+            </div>
+            <div class="grid-card">
+                <h3>02. Privacy</h3>
+                <p>We believe your health data is yours alone. Our local-first storage approach means your biometric data stays on your machine, not on a third-party server.</p>
+            </div>
+            <div class="grid-card">
+                <h3>03. Performance</h3>
+                <p>Built using the React engine, the interface responds at the speed of thought. Low-latency interactions ensure that logging a set never interrupts your heart rate.</p>
+            </div>
+        </section>
+
+        <section class="info-section reveal">
+            <h2 class="title-bg">Project Architecture</h2>
+            <div class="arch-list">
+                <div class="arch-item">
+                    <h4>Interaction Layer</h4>
+                    <p>Utilizing custom-built cursors and Intersection Observer APIs for fluid, scroll-triggered reveals.</p>
+                </div>
+                <div class="arch-item">
+                    <h4>Logic Engine</h4>
+                    <p>Sophisticated JavaScript modules handle complex mathematical formulas for fitness analytics.</p>
+                </div>
+                <div class="arch-item">
+                    <h4>Visual Language</h4>
+                    <p>A "Crimson & Carbon" dark theme designed to reduce eye strain during late-night gym sessions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section reveal">
+            <h2 class="title-bg">The Engineering Team</h2>
+            <div class="team-grid">
+                <div class="creator-card">
+                    <div class="avatar">SR</div>
+                    <h4>Sriram Ramesh C</h4>
+                    <p>Lead System Architect</p>
+                </div>
+                <div class="creator-card">
+                    <div class="avatar">D2</div>
+                    <h4>Developer 02</h4>
+                    <p>UI/UX Engineer</p>
+                </div>
+                <div class="creator-card">
+                    <div class="avatar">D3</div>
+                    <h4>Developer 03</h4>
+                    <p>Backend Logic Specialist</p>
+                </div>
+                <div class="creator-card">
+                    <div class="avatar">D4</div>
+                    <h4>Developer 04</h4>
+                    <p>Database & State Manager</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/cursor.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 </html>

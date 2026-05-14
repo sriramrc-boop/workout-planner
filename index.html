@@ -7,42 +7,26 @@
     <link href="styling/cursor.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="js/cursor.js"></script>
-    <script src="js/index.js"></script>
 </head>
 <body>
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-ring" id="cursor-ring"></div>
     <section id="navbar">
-        <h1><a href="index.html">WORKOUT<span>PLANNER</span></a></h1>
-        <nav>
-            <a href="index.html" id="active">HOME</a>
-            <a href="webpages/about.html">ABOUT</a>
-            <a href="workout.html">WORKOUT</a>
-            <a href="calculator.html">CALCULATOR</a>
-            <a href="contact.html">CONTACT</a>
-        </nav>
+        <a href="webpages/about.html">ABOUT</a>
+        <a href="webpages/workout.html">WORKOUT</a>
+        <div id="logo"><a href="index.html">W<span>P</span></a></div>
+        <a href="webpages/calc.html">CALCULATOR</a>
+        <a href="webpages/contact.html">CONTACT</a>    
     </section>
 
-    <section id="home-content" class="split-container">
-        <a href="workout.html" class="split left">
-            <video muted loop class="bg-video">
-                <source src="videos/workout-home-bg.mp4" type="video/mp4">
-            </video>
-            <div class="content">
-                <h1>WORKOUT</h1>
-                <p>Challenge Your Limits</p>
-            </div>
-        </a>
-
-        <a href="calculator.html" class="split right">
-            <video muted loop class="bg-video">
-                <source src="videos/calculator-home-bg.mp4" type="video/mp4">
-            </video>
-            <div class="content">
-                <h1>CALCULATOR</h1>
-                <p>Track Your Progress</p>
-            </div>
-        </a>
-    </section>
+    <div id="home-content" class="split-container">
+        <video autoplay muted loop class="bg-video">
+            <source src="videos/workout-home-bg.mp4" type="video/mp4">
+        </video>
+            <h1 class="hero-text">
+                <span>WORKOUTPLANNER</span>
+                <span>WORKOUTPLANNER</span>
+            </h1>
+    </div>
 </body>
 </html>
