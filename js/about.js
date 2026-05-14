@@ -18,8 +18,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
-scrollTrigger: {
-    trigger: ".reveal",
-    start: "top 80%",
-    once: true // This prevents the bounce-back effect
-}
+ 
