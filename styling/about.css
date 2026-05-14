@@ -23,6 +23,7 @@
 }
 
  .info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
+ .info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
 .label { color: crimson; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 20px; }
 .title-bg { font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
 
@@ -35,6 +36,7 @@
     line-height: 1.8;
 }
 
+ .grid-section {
  .grid-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -53,9 +55,11 @@
 .grid-card h3 { color: crimson; margin-bottom: 20px; }
 
  .arch-list { margin-top: 40px; }
+ .arch-list { margin-top: 40px; }
 .arch-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid crimson; }
 .arch-item h4 { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
 
+ .team-grid {
  .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -77,6 +81,7 @@
     color: crimson; font-weight: bold; border: 1px solid crimson;
 }
 
+ .reveal {
  .reveal {
     opacity: 0;
     transform: translateY(50px);
