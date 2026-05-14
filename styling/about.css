@@ -1,7 +1,6 @@
 
 
-/* HERO */
-.hero-section {
+ .hero-section {
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -24,8 +23,7 @@
     font-size: 1.2rem;
 }
 
-/* SECTIONS */
-.info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
+ .info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
 .label { color: crimson; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 20px; }
 .title-bg { font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
 
@@ -38,8 +36,7 @@
     line-height: 1.8;
 }
 
-/* CARDS */
-.grid-section {
+ .grid-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -56,13 +53,11 @@
 .grid-card:hover { border-color: crimson; transform: translateY(-10px); }
 .grid-card h3 { color: crimson; margin-bottom: 20px; }
 
-/* ARCHITECTURE */
-.arch-list { margin-top: 40px; }
+ .arch-list { margin-top: 40px; }
 .arch-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid crimson; }
 .arch-item h4 { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
 
-/* TEAM GRID */
-.team-grid {
+ .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -83,8 +78,7 @@
     color: crimson; font-weight: bold; border: 1px solid crimson;
 }
 
-/* REVEAL */
-.reveal {
+ .reveal {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
@@ -105,17 +99,14 @@
     font-family: 'Oswald', sans-serif;
     padding: 0 10% 100px;
     overflow-x: hidden;
-    
-    /* NEW: Kinetic Muscle Background */
-    /* Simulates a deep, breathing red aura in the center */
+ 
     background: radial-gradient(circle at 50% 50%, #1a0000 0%, #050505 80%);
     background-size: 150% 150%;
     animation: musclePump 10s ease-in-out infinite;
     position: relative;
 }
 
-/* Sub-grid overlay to give an "Engineering" and "Gym Floor" look */
-.about-container::before {
+ .about-container::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
@@ -128,8 +119,7 @@
     pointer-events: none;
 }
 
-/* The Animation: A slow, rhythmic expansion like a heavy breath */
-@keyframes musclePump {
+ @keyframes musclePump {
     0% { background-position: 50% 50%; filter: brightness(1); }
     50% { background-position: 55% 45%; filter: brightness(1.4); }
     100% { background-position: 50% 50%; filter: brightness(1); }
@@ -138,7 +128,7 @@
 .reveal {
     opacity: 0;
     filter: blur(20px) brightness(0.5);
-    letter-spacing: 15px; /* Text starts "loose" */
+    letter-spacing: 15px;  
     transform: translateY(100px) skewY(5deg);
     transition: 
         opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
