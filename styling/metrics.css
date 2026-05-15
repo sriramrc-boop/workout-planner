@@ -1,257 +1,164 @@
-/* ============================================================
+/* =========================================
    1. CORE ANIMATIONS
-   ============================================================ */
-
-/* Warp Speed: Moves right, teleports, and returns from the left */
-/* Adjusted to 0.9s for a snappier tactical feel */
+   ========================================= */
 @keyframes warpSpeed {
     0% { transform: translateX(0); opacity: 1; }
-    40% { transform: translateX(50px); opacity: 0; } /* Exit Right */
-    41% { transform: translateX(-50px); opacity: 0; } /* Reset Left */
-    100% { transform: translateX(0); opacity: 1; } /* Return Center */
+    40% { transform: translateX(50px); opacity: 0; } 
+    41% { transform: translateX(-50px); opacity: 0; } 
+    100% { transform: translateX(0); opacity: 1; } 
 }
 
-/* Sharp reveal for calculation numbers */
 @keyframes dataReveal {
     0% { opacity: 0; transform: scale(1.1) translateY(-10px); filter: blur(4px); }
     20% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
     100% { opacity: 1; text-shadow: 0 0 3px currentColor; }
 }
 
-/* Breathing HUD glow for action buttons */
 @keyframes neonPulse {
     0%, 100% { box-shadow: 0 0 2px crimson, inset 0 0 1px crimson; }
     50% { box-shadow: 0 0 5px crimson, inset 0 0 2px crimson; }
 }
 
-/* Soft pulse for crimson highlights */
 @keyframes pulseGlow { 
     0%, 100% { text-shadow: 0 0 5px rgba(220, 20, 60, 0.2); } 
     50% { text-shadow: 0 0 12px rgba(220, 20, 60, 0.4); } 
 }
 
-/* Card entry animation */
 @keyframes slamIn { 
     0% { opacity: 0; transform: translateY(15px); } 
     100% { opacity: 1; transform: translateY(0); } 
 }
 
-
-/* ============================================================
-   2. GLOBAL STYLES & TYPOGRAPHY
-   ============================================================ */
-
-body {
-    background: #0f0f0f;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding-top: 160px;
-    overflow-x: hidden; /* Prevents scrollbars during animations */
-}
-
-/* Shared HUD font style */
-#navbar a, .main-title, .mode-btn, .info-box h3, .box h3, 
-button, p[id^="out-"], .bmi-table, .gym-list li {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-}
-
-
-/* ============================================================
-   3. VIDEO BACKGROUND & OVERLAY
-   ============================================================ */
-
-.video-background, .video-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    z-index: -1;
+/* =========================================
+   2. VIDEO BACKGROUND & FIXED OVERLAY (FIXED HERE)
+   ========================================= */
+.video-background {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden;
 }
 
 .video-background video {
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 100vw; height: 100vh;
-    transform: translate(-50%, -50%) scale(1.35);
+    position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh;
+    transform: translate(-50%, -50%) scale(1.35); 
     object-fit: cover;
 }
 
+/* Changed to fixed and 100vh to stop the "line" at the bottom */
 .video-overlay {
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh; 
     z-index: 1;
     background: linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.98));
 }
 
-
-/* ============================================================
-   4. NAVIGATION & MAIN TITLE (Warp Speed)
-   ============================================================ */
+/* =========================================
+   4. BODY & MAIN TITLE
+   ========================================= */
+body {
+    background-color: #0f0f0f; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0;
+    padding-top: 150px; /* Reduced to 300px for a cleaner look */
+    overflow-x: hidden; 
+}
 
 .main-title {
-    margin-top: 150px;
-    position: relative; 
-    z-index: 2;
-    font-size: 3.5rem;
-    margin-bottom: 80px;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
+    padding-top: 110px;
+    position: relative; z-index: 2; font-family: 'Oswald', sans-serif; text-align: center; 
+    font-size: 3.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 80px; cursor: pointer;
 }
 
-/* Warp Speed Animation Trigger - Speed increased to 0.9s */
-.main-title:hover {
-    animation: warpSpeed 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
+.main-title:hover { animation: warpSpeed 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+.red-text { color: crimson; animation: pulseGlow 2s infinite ease-in-out; }
 
-.red-text { color: crimson; animation: pulseGlow 2s infinite; }
-
-
-/* ============================================================
-   5. CALCULATOR SELECTORS & BMI TABLE
-   ============================================================ */
-
+/* =========================================
+   5. MODE SELECTOR (Slim HUD Style)
+   ========================================= */
 .calculator-selector {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    max-width: 1000px;
-    margin: 0 auto 40px;
-    position: relative;
-    z-index: 5;
+    display: flex; justify-content: space-between; width: 95%; max-width: 1000px; 
+    margin: 0 auto 40px auto; position: relative; z-index: 5;
 }
 
 .mode-btn {
-    width: 180px;
-    padding: 10px 0;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease; 
+    width: 180px; padding: 10px 0 !important; background: rgba(255,255,255,0.03) !important; 
+    border: 1px solid rgba(255,255,255,0.08) !important; color: white !important; 
+    font-family: 'Oswald'; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-align: center;
 }
 
-/* Hover effect for Selector buttons */
 .mode-btn:hover:not(.active) {
-    background: rgba(220, 20, 60, 0.15) !important;
-    border-color: crimson !important;
-    box-shadow: 0 0 10px rgba(220, 20, 60, 0.2);
-    transform: translateY(-2px); 
+    background: rgba(220, 20, 60, 0.15) !important; border-color: crimson !important;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.2); transform: translateY(-2px); 
 }
 
-.mode-btn.active {
-    background: crimson !important;
-    border-color: crimson !important;
-    box-shadow: 0 0 6px rgba(220, 20, 60, 0.3);
-}
+.mode-btn.active { background: crimson !important; border-color: crimson !important; box-shadow: 0 0 6px rgba(220, 20, 60, 0.3); }
 
-.calc-mode-wrapper {
-    display: none; 
-    width: 95%;
-    max-width: 1000px;
-    margin: 0 auto 40px;
-    gap: 25px;
-}
+/* =========================================
+   6. MAIN DISPLAY & BMI TABLE
+   ========================================= */
+.main-display-container { display: flex; justify-content: center; position: relative; z-index: 2; }
+.calc-mode-wrapper { display: none; width: 95%; max-width: 1000px; gap: 25px; flex-direction: row; align-items: stretch; justify-content: center; }
+.calc-mode-wrapper.active { display: flex !important; animation: slamIn 0.4s ease-out; }
 
-.calc-mode-wrapper.active { display: flex; animation: slamIn 0.4s ease-out; }
+.bmi-table { width: 100%; margin-top: 15px; border-collapse: collapse; }
+.bmi-table th { color: crimson; text-align: left; padding-bottom: 10px; font-family: 'Oswald'; }
+.bmi-table td { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Oswald'; transition: all 0.3s ease; }
+.bmi-table tr:hover td { color: crimson; background: rgba(220, 20, 60, 0.05); transform: translateX(10px); }
 
-/* BMI TABLE - Grouped with calculator layout */
-.bmi-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-.bmi-table th { color: crimson; text-align: left; padding-bottom: 10px; }
-.bmi-table td { padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s ease; }
-.bmi-table tr:hover td { 
-    color: crimson; 
-    background: rgba(220, 20, 60, 0.05); 
-    transform: translateX(10px); 
-}
-
-
-/* ============================================================
-   6. CARDS & ACTION BUTTONS (Hover Animations Kept)
-   ============================================================ */
-
-.info-box, .box { padding: 30px; border-radius: 12px; }
-
+/* =========================================
+   7. INFO BOXES & CARDS
+   ========================================= */
 .info-box {
-    flex: 1;
-    background: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(12px);
-    border-left: 3px solid crimson;
+    flex: 1; background: rgba(10,10,10,0.5); backdrop-filter: blur(12px); padding: 30px; 
+    border-radius: 12px; border-left: 3px solid crimson; display: flex; flex-direction: column; justify-content: center;
 }
 
-/* Readable line spacing */
-.info-box p { font-size: 1rem; color: #ccc; line-height: 1.8; }
+.info-box h3 { font-family: 'Oswald'; font-size: 1.8rem; color: crimson; margin-top: 0; text-transform: uppercase; }
+.info-box p { font-weight: 500; font-size: 1rem; color: #ccc; line-height: 1.8; }
 
-.gym-list li { margin: 15px 0; font-size: 1.1rem; line-height: 1.6; transition: 0.3s; }
+.gym-list li { margin: 15px 0; font-family: 'Oswald'; font-size: 1.1rem; line-height: 1.6; transition: 0.3s ease; }
 .gym-list li:hover { transform: translateX(10px); color: crimson; }
 
 .box {
-    flex: 0 0 350px;
-    background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
-    border-top: 4px solid crimson;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    text-align: center;
+    flex: 0 0 350px; background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(10px); padding: 30px; 
+    border-radius: 12px; border-top: 4px solid crimson; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.6); position: relative; overflow: hidden;
 }
 
-.box h3 { border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 10px; margin-bottom: 20px; }
+.box h3 { font-family: 'Oswald'; margin: 0 0 20px 0; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
 
-input, select, .box button {
-    width: 100%; max-width: 280px;
-    margin: 10px auto;
-    display: block;
-    padding: 14px;
-    border-radius: 6px;
-    box-sizing: border-box;
-    transition: 0.3s;
+/* =========================================
+   8. INPUTS & HUD BUTTONS
+   ========================================= */
+input, select {
+    width: 100%; max-width: 280px; margin: 10px auto; display: block; padding: 14px; 
+    border-radius: 6px; background: rgba(20,20,20,0.6); border: 1px solid rgba(255, 255, 255, 0.05); 
+    color: #fff; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box; height: 50px; transition: 0.3s;
 }
 
-input, select { background: rgba(20, 20, 20, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); color: #fff; height: 50px; }
 input:focus, select:focus { border-color: crimson; outline: none; box-shadow: 0 0 5px rgba(220, 20, 60, 0.2); }
 
-/* MAIN BUTTON HOVER ANIMATIONS */
-.box button {
-    background: rgba(220, 20, 60, 0.05);
-    border: 1px solid crimson;
-    color: #fff;
-    font-weight: 800;
-    cursor: pointer;
-    letter-spacing: 2px;
-    animation: neonPulse 5s infinite;
-    position: relative;
-    border-radius: 0;
+button { 
+    width: 100%; max-width: 280px; margin: 25px auto 0 auto; background: rgba(220, 20, 60, 0.05); 
+    border: 1px solid crimson; padding: 16px; border-radius: 0; color: #ffffff; font-family: 'Oswald'; 
+    font-weight: 800; font-size: 1rem; cursor: pointer; text-transform: uppercase; position: relative;
+    z-index: 1; letter-spacing: 2px; transition: all 0.3s ease; animation: neonPulse 5s infinite ease-in-out; 
 }
 
-/* HUD Brackets */
-.box button::before { content: '['; left: 10px; }
-.box button::after { content: ']'; right: 10px; }
-.box button::before, .box button::after {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    color: crimson; opacity: 0.3; transition: 0.3s;
-}
+button::before { content: '['; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: crimson; opacity: 0.3; }
+button::after { content: ']'; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: crimson; opacity: 0.3; }
+button:hover { background: crimson; color: #fff; letter-spacing: 4px; transform: scale(1.02); box-shadow: 0 0 12px rgba(220, 20, 60, 0.3); }
+button:hover::before, button:hover::after { opacity: 0.8; }
 
-/* Animated Hover State */
-.box button:hover { 
-    background: crimson; 
-    letter-spacing: 4px; 
-    transform: scale(1.02);
-    box-shadow: 0 0 12px rgba(220, 20, 60, 0.3);
-}
-
-.box button:hover::before, .box button:hover::after { opacity: 0.8; }
-
-
-/* ============================================================
-   7. RESULTS & MOBILE VIEW
-   ============================================================ */
-
-p[id^="out-"] { margin-top: 25px; font-size: 1.8rem; min-height: 2.2rem; opacity: 0; transition: color 0.3s; }
-.reveal-result { opacity: 1 !important; animation: dataReveal 0.5s forwards; }
+/* =========================================
+   9. RESULTS & RESPONSIVENESS
+   ========================================= */
+p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top: 25px; font-size: 1.8rem; min-height: 2.2rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0; transition: color 0.3s ease; }
+.reveal-result { opacity: 1 !important; animation: dataReveal 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
 
 @media (max-width: 850px) {
     #navbar { gap: 20px; padding: 15px 0; }
-    #navbar a { font-size: 0.8rem; }
+    #navbar a { font-size: 0.8rem; letter-spacing: 1px; }
+    #logo a { font-size: 30px !important; }
     .calc-mode-wrapper.active { flex-direction: column; align-items: center; }
-    .box { flex: auto; width: 100%; }
+    .info-box { width: 100%; box-sizing: border-box; }
+    .box { flex: 0 0 auto; width: 100%; max-width: 400px; }
     .main-title { font-size: 2.5rem; }
-    .calculator-selector { flex-direction: column; max-width: 180px; align-items: center; gap: 10px; }
+    .calculator-selector { flex-direction: column; width: 100%; max-width: 180px; align-items: center; gap: 10px; }
 }
