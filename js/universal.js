@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("fade-out");
             setTimeout(() => {
                 window.location.href = target;
-            }, 450); // Matches CSS animation duration
+            }, 450); 
         });
     });
 

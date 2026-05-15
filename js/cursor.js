@@ -12,15 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
-        // The dot follows perfectly
         dot.style.left = mouseX + 'px';
         dot.style.top = mouseY + 'px';
     });
 
     // 2. The Lag Logic (Linear Interpolation)
     function animate() {
-        // The ring moves 15% of the distance to the mouse every frame
-        // This creates that "smooth following" feel
         ringX += (mouseX - ringX) * 0.15;
         ringY += (mouseY - ringY) * 0.15;
 
