@@ -1,5 +1,4 @@
- // Animate stats on scroll into view
-        function animateCount(el, target, duration) {
+         function animateCount(el, target, duration) {
             let start = 0;
             const step = Math.ceil(target / (duration / 16));
             const timer = setInterval(() => {
@@ -21,8 +20,7 @@
         }, { threshold: 0.4 });
         observer.observe(banner);
 
-        // Scroll-reveal for steps
-        const steps = document.querySelectorAll('.step');
+         const steps = document.querySelectorAll('.step');
         const revealObserver = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) e.target.classList.add('visible');
