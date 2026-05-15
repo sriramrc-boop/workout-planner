@@ -1,3 +1,7 @@
+body{
+    display: flex;
+}
+
 .about-container {
     background: #050505;
     color: #fff;

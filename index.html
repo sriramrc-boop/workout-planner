@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>WORKOUTPLANNER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styling/index.css" rel="stylesheet">
     <link href="styling/universal.css" rel="stylesheet">
     <link href="styling/cursor.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <script src="js/cursor.js" defer></script>
 </head>
 <body>
     <div class="cursor-dot" id="cursor-dot"></div>
@@ -21,7 +21,6 @@
         <a href="webpages/contact.html">CONTACT</a>    
     </section>
 
-    <!-- HERO -->
     <div id="home-content" class="split-container">
         <video autoplay muted loop class="bg-video">
             <source src="videos/bg-video.mp4" type="video/mp4">
@@ -35,23 +34,22 @@
         </div>
     </div>
 
-    <!-- HOW IT WORKS -->
     <section id="how-it-works">
         <p class="section-label">HOW IT WORKS</p>
         <div class="steps-grid">
-            <div class="step" data-num="01">
+            <div class="step">
                 <div class="step-number">01</div>
                 <h2 class="step-title">PLAN</h2>
                 <p class="step-desc">Choose your exercises, set your reps and sets, and build your daily workout in seconds.</p>
             </div>
             <div class="step-divider"></div>
-            <div class="step" data-num="02">
+            <div class="step">
                 <div class="step-number">02</div>
                 <h2 class="step-title">TRACK</h2>
                 <p class="step-desc">Log your sessions as you go. Monitor your progress and keep every metric in check.</p>
             </div>
             <div class="step-divider"></div>
-            <div class="step" data-num="03">
+            <div class="step">
                 <div class="step-number">03</div>
                 <h2 class="step-title">STREAK</h2>
                 <p class="step-desc">Stay consistent. Your streak grows every day you show up — don't break the chain.</p>
@@ -59,7 +57,6 @@
         </div>
     </section>
 
-    <!-- STREAK BANNER -->
     <section id="streak-banner">
         <div class="banner-inner">
             <div class="banner-stat">
@@ -79,7 +76,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section id="cta-section">
         <div class="cta-inner">
             <h2 class="cta-heading">READY TO<br><span>BUILD YOUR BEST?</span></h2>
@@ -88,47 +84,13 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer id="site-footer">
         <div class="footer-logo">W<span>P</span></div>
-        <p class="footer-copy">© 2026 WORKOUTPLANNER. ALL RIGHTS RESERVED.</p>
+        <p class="footer-copy">© 2026 WORKOUTPLANNER.</p>
     </footer>
-
-    <script>
-        // Animate stats on scroll into view
-        function animateCount(el, target, duration) {
-            let start = 0;
-            const step = Math.ceil(target / (duration / 16));
-            const timer = setInterval(() => {
-                start += step;
-                if (start >= target) { el.textContent = target; clearInterval(timer); }
-                else el.textContent = start;
-            }, 16);
-        }
-
-        const banner = document.getElementById('streak-banner');
-        let animated = false;
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting && !animated) {
-                animated = true;
-                animateCount(document.getElementById('streak-count'), 7, 800);
-                animateCount(document.getElementById('workout-count'), 42, 1000);
-                animateCount(document.getElementById('personal-bests'), 5, 700);
-            }
-        }, { threshold: 0.4 });
-        observer.observe(banner);
-
-        // Scroll-reveal for steps
-        const steps = document.querySelectorAll('.step');
-        const revealObserver = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('visible');
-            });
-        }, { threshold: 0.2 });
-        steps.forEach(s => revealObserver.observe(s));
-    </script>
-    </div> <!-- /.page-wrapper -->
-    
-    <script src="../js/universal.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/universal.js"></script>
+    <script src="js/index.js"></script>
+    </div> 
 </body>
 </html>

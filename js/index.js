@@ -1,22 +1,31 @@
-// Wait for the DOM to load
-document.addEventListener('DOMContentLoaded', () => {
-    const splits = document.querySelectorAll('.split');
+ // Animate stats on scroll into view
+        function animateCount(el, target, duration) {
+            let start = 0;
+            const step = Math.ceil(target / (duration / 16));
+            const timer = setInterval(() => {
+                start += step;
+                if (start >= target) { el.textContent = target; clearInterval(timer); }
+                else el.textContent = start;
+            }, 16);
+        }
 
-    splits.forEach(split => {
-        const video = split.querySelector('.bg-video');
+        const banner = document.getElementById('streak-banner');
+        let animated = false;
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !animated) {
+                animated = true;
+                animateCount(document.getElementById('streak-count'), 7, 800);
+                animateCount(document.getElementById('workout-count'), 42, 1000);
+                animateCount(document.getElementById('personal-bests'), 5, 700);
+            }
+        }, { threshold: 0.4 });
+        observer.observe(banner);
 
-        split.addEventListener('mouseenter', () => {
-            // Play the video and handle potential browser blocks
-            video.play().catch(error => {
-                console.log("Autoplay prevented: ", error);
+        // Scroll-reveal for steps
+        const steps = document.querySelectorAll('.step');
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
             });
-        });
-
-        split.addEventListener('mouseleave', () => {
-            // Pause and reset to start when mouse leaves
-            video.pause();
-            video.currentTime = 0; 
-        });
-    });
-});
-
+        }, { threshold: 0.2 });
+        steps.forEach(s => revealObserver.observe(s));
