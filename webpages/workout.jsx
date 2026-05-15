@@ -123,7 +123,7 @@ const globalStyles = `
   .screen {
     position: fixed; inset: 0; background: #000; z-index: 100;
     display: flex; flex-direction: column; justify-content: center;
-    align-items: flex-start; overflow-y: auto;
+    align-items: center; overflow-y: auto;
     animation: screenIn 0.5s cubic-bezier(0.76,0,0.24,1) both;
   }
   @keyframes screenIn {
@@ -149,7 +149,7 @@ const globalStyles = `
 
   .screen-body {
     width: 100%; max-width: 1200px; padding: 120px 48px 80px;
-    display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: left;
   }
 
   .grid-cards { display: grid; gap: 16px; }
@@ -297,7 +297,7 @@ const globalStyles = `
   .bg-cardio { background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80') center/cover; }
   .bg-rest   { background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80') center/cover; }
 
-  .check-icon { color: #DC143C; font-size: 18px; margin-left: 10px; animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
+  .check-icon { position: absolute; right: 24px; top: 60%; color: #DC143C; font-size: 18px; margin-left: 10px; animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
   @keyframes popIn {
     from { transform: scale(0); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
@@ -685,7 +685,7 @@ function WorkoutPlanner() {
       <style>{globalStyles}</style>
       <div className="wp-root">
         <div style={{
-          position: "fixed", bottom: "40px", left: "50%", transform: "translateX(-50%)", zIndex: 50,
+          position: "fixed", bottom: "20px", left: "50%", transform: "translateX(-50%)", zIndex: 50,
           fontSize: "12px", letterSpacing: "4px", color: "#DC143C", fontFamily: "'Oswald', sans-serif",
           fontWeight: 600, border: "1px solid rgba(220,20,60,0.3)", padding: "8px 18px", background: "rgba(0,0,0,0.6)",
         }}>

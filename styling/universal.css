@@ -49,8 +49,10 @@ body {
 }
 
 #navbar a#active {
-    color: crimson;
-    border-bottom: 1px solid crimson;
+    -webkit-text-fill-color: initial !important;
+    -webkit-background-clip: initial !important;
+    background: none !important;
+    color: crimson !important;
 }
 
 #logo a {
