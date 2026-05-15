@@ -8,53 +8,40 @@ function handleSubmit(){
     document.getElementById('message')
   ];
 
+  const emailElement = document.getElementById('email');
+  const emailValue = emailElement.value.trim();
+  const emailGroup = emailElement.parentElement;
+
   let valid = true;
 
   fields.forEach(field => {
-
-    const group = field.parentElement;
-
-    group.classList.remove('has-error');
-
-    if(field.value.trim() === ''){
-
-      group.classList.add('has-error');
-
-      valid = false;
-    }
-
+    field.parentElement.classList.remove('has-error');
   });
 
-  if(!valid) return;
+  fields.forEach(field => {
+    if (field.value.trim() === '') {
+      field.parentElement.classList.add('has-error');
+      valid = false;
+    }
+  });
+
+  if (!emailValue.includes('@') || !emailValue.includes('.')) {
+    emailGroup.classList.add('has-error');
+    valid = false;
+  }
+
+  if (!valid) return;
 
   const form = document.getElementById('contact-form');
   const success = document.getElementById('success-msg');
-
   const btn = document.querySelector('.btn-submit');
 
   btn.innerHTML = 'SENDING...';
-
   btn.disabled = true;
-
   btn.style.opacity = '.7';
 
   setTimeout(() => {
-
     form.style.display = 'none';
-
     success.classList.add('visible');
-
-  },800);
-
+  }, 800);
 }
-
-document.querySelectorAll('.form-group input,.form-group textarea')
-.forEach(field => {
-
-  field.addEventListener('input', () => {
-
-    field.parentElement.classList.remove('has-error');
-
-  });
-
-});
