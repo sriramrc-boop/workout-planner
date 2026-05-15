@@ -1,6 +1,3 @@
-/* =========================================
-   1. CORE ANIMATIONS
-   ========================================= */
 @keyframes warpSpeed {
     0% { transform: translateX(0); opacity: 1; }
     40% { transform: translateX(50px); opacity: 0; } 
@@ -29,9 +26,6 @@
     100% { opacity: 1; transform: translateY(0); } 
 }
 
-/* =========================================
-   2. VIDEO BACKGROUND & FIXED OVERLAY (FIXED HERE)
-   ========================================= */
 .video-background {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden;
 }
@@ -42,7 +36,6 @@
     object-fit: cover;
 }
 
-/* Changed to fixed and 100vh to stop the "line" at the bottom */
 .video-overlay {
     position: fixed; 
     top: 0; left: 0; 
@@ -51,12 +44,9 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.98));
 }
 
-/* =========================================
-   4. BODY & MAIN TITLE
-   ========================================= */
 body {
     background-color: #0f0f0f; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0;
-    padding-top: 150px; /* Reduced to 300px for a cleaner look */
+    padding-top: 150px;
     overflow-x: hidden; 
 }
 
@@ -69,9 +59,6 @@ body {
 .main-title:hover { animation: warpSpeed 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
 .red-text { color: crimson; animation: pulseGlow 2s infinite ease-in-out; }
 
-/* =========================================
-   5. MODE SELECTOR (Slim HUD Style)
-   ========================================= */
 .calculator-selector {
     display: flex; justify-content: space-between; width: 95%; max-width: 1000px; 
     margin: 0 auto 40px auto; position: relative; z-index: 5;
@@ -90,9 +77,6 @@ body {
 
 .mode-btn.active { background: crimson !important; border-color: crimson !important; box-shadow: 0 0 6px rgba(220, 20, 60, 0.3); }
 
-/* =========================================
-   6. MAIN DISPLAY & BMI TABLE
-   ========================================= */
 .main-display-container { display: flex; justify-content: center; position: relative; z-index: 2; }
 .calc-mode-wrapper { display: none; width: 95%; max-width: 1000px; gap: 25px; flex-direction: row; align-items: stretch; justify-content: center; }
 .calc-mode-wrapper.active { display: flex !important; animation: slamIn 0.4s ease-out; }
@@ -102,9 +86,7 @@ body {
 .bmi-table td { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Oswald'; transition: all 0.3s ease; }
 .bmi-table tr:hover td { color: crimson; background: rgba(220, 20, 60, 0.05); transform: translateX(10px); }
 
-/* =========================================
-   7. INFO BOXES & CARDS
-   ========================================= */
+/*description styling*/
 .info-box {
     flex: 1; background: rgba(10,10,10,0.5); backdrop-filter: blur(12px); padding: 30px; 
     border-radius: 12px; border-left: 3px solid crimson; display: flex; flex-direction: column; justify-content: center;
@@ -123,9 +105,7 @@ body {
 
 .box h3 { font-family: 'Oswald'; margin: 0 0 20px 0; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
 
-/* =========================================
-   8. INPUTS & HUD BUTTONS
-   ========================================= */
+/* input styling*/
 input, select {
     width: 100%; max-width: 280px; margin: 10px auto; display: block; padding: 14px; 
     border-radius: 6px; background: rgba(20,20,20,0.6); border: 1px solid rgba(255, 255, 255, 0.05); 
@@ -146,12 +126,11 @@ button::after { content: ']'; position: absolute; right: 10px; top: 50%; transfo
 button:hover { background: crimson; color: #fff; letter-spacing: 4px; transform: scale(1.02); box-shadow: 0 0 12px rgba(220, 20, 60, 0.3); }
 button:hover::before, button:hover::after { opacity: 0.8; }
 
-/* =========================================
-   9. RESULTS & RESPONSIVENESS
-   ========================================= */
+/* result styling*/
 p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top: 25px; font-size: 1.8rem; min-height: 2.2rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0; transition: color 0.3s ease; }
 .reveal-result { opacity: 1 !important; animation: dataReveal 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
 
+/* responsiveness*/
 @media (max-width: 850px) {
     .calc-mode-wrapper.active { flex-direction: column; align-items: center; }
     .info-box { width: 100%; box-sizing: border-box; }
@@ -161,20 +140,17 @@ p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top:
 }
 
 @media (max-width: 1100px) {
-    /* Stacks the three top selector buttons */
     .calculator-selector {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    /* Stacks the cards vertically */
     .calc-mode-wrapper.active { 
         flex-direction: column; 
         align-items: center; 
     }
     
-    /* Description Card: Centered and narrowed */
     .info-box { 
         order: 1; /* Forces to top */
         width: 85%; 
@@ -183,20 +159,18 @@ p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top:
         box-sizing: border-box; 
     }
     
-    /* Calculator Card: Centered, narrowed, and pushed lower */
     .box { 
         order: 2; /* Forces to bottom */
         width: 85%; 
         max-width: 350px;
-        margin: 50px auto 0; /* 50px gap from the description */
+        margin: 50px auto 0; /* 50px gap from description */
         flex: auto; 
     }
 
-    /* Shrinks the main title for small screens */
+    /* Shrink main title for small screens */
     .main-title { font-size: 2.5rem; }
 }
 
-/* Base Glass Styles */
 .info-box, .box { 
     backdrop-filter: blur(12px); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
