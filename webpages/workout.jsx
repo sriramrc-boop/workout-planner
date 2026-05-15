@@ -293,9 +293,9 @@ const globalStyles = `
   .section-label { font-size: 11px; letter-spacing: 5px; color: rgba(255,255,255,0.3); margin-bottom: 20px; text-transform: uppercase; font-weight: 200; }
   .workout-count { font-size: 12px; letter-spacing: 3px; color: rgba(255,255,255,0.35); margin-bottom: 32px; }
 
-  .bg-muscle { background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80') center/cover; }
-  .bg-cardio { background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80') center/cover; }
-  .bg-rest   { background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80') center/cover; }
+  .bg-muscle { background: url('../imgs/muscle-training-bg.jpg') center/cover; }
+  .bg-cardio { background: url('../imgs/cardio-section-bg.jpg') center/cover; }
+  .bg-rest   { background: url('../imgs/rest-section-bg.jpg') center/cover; }
 
   .check-icon { position: absolute; right: 24px; top: 60%; color: #DC143C; font-size: 18px; margin-left: 10px; animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
   @keyframes popIn {
