@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let ringX = 0;
     let ringY = 0;
 
-    // 1. Track Mouse Position
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.style.top = mouseY + 'px';
     });
 
-    // 2. The Lag Logic (Linear Interpolation)
     function animate() {
         ringX += (mouseX - ringX) * 0.15;
         ringY += (mouseY - ringY) * 0.15;
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animate();
 
-    // 3. Hover Effects for Buttons/Links
     const interactables = document.querySelectorAll('button, a, .menu-toggle, .split');
     
     interactables.forEach(el => {

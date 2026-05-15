@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Page Transition Logic
     const links = document.querySelectorAll("a");
     links.forEach(link => {
         link.addEventListener("click", (e) => {
             const target = link.getAttribute("href");
-            // Ignore if it's the current page or a purely internal link
             if (target === "#" || target.startsWith("http") || link.id === "active") return;
             
             e.preventDefault();
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. Scroll Reveal Logic (Intersection Observer)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -27,7 +24,3 @@ document.addEventListener("DOMContentLoaded", () => {
     const hiddenElements = document.querySelectorAll('.hidden-scroll');
     hiddenElements.forEach((el) => observer.observe(el));
 });
-
-function expandLogo(){
-    
-}

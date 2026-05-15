@@ -86,7 +86,6 @@ body {
 .bmi-table td { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Oswald'; transition: all 0.3s ease; }
 .bmi-table tr:hover td { color: crimson; background: rgba(220, 20, 60, 0.05); transform: translateX(10px); }
 
-/*description styling*/
 .info-box {
     flex: 1; background: rgba(10,10,10,0.5); backdrop-filter: blur(12px); padding: 30px; 
     border-radius: 12px; border-left: 3px solid crimson; display: flex; flex-direction: column; justify-content: center;
@@ -105,7 +104,6 @@ body {
 
 .box h3 { font-family: 'Oswald'; margin: 0 0 20px 0; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
 
-/* input styling*/
 input, select {
     width: 100%; max-width: 280px; margin: 10px auto; display: block; padding: 14px; 
     border-radius: 6px; background: rgba(20,20,20,0.6); border: 1px solid rgba(255, 255, 255, 0.05); 
@@ -126,11 +124,10 @@ button::after { content: ']'; position: absolute; right: 10px; top: 50%; transfo
 button:hover { background: crimson; color: #fff; letter-spacing: 4px; transform: scale(1.02); box-shadow: 0 0 12px rgba(220, 20, 60, 0.3); }
 button:hover::before, button:hover::after { opacity: 0.8; }
 
-/* result styling*/
+
 p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top: 25px; font-size: 1.8rem; min-height: 2.2rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0; transition: color 0.3s ease; }
 .reveal-result { opacity: 1 !important; animation: dataReveal 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
 
-/* responsiveness*/
 @media (max-width: 850px) {
     .calc-mode-wrapper.active { flex-direction: column; align-items: center; }
     .info-box { width: 100%; box-sizing: border-box; }
@@ -152,7 +149,7 @@ p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top:
     }
     
     .info-box { 
-        order: 1; /* Forces to top */
+        order: 1; 
         width: 85%; 
         max-width: 500px;
         margin: 0 auto;
@@ -160,14 +157,13 @@ p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top:
     }
     
     .box { 
-        order: 2; /* Forces to bottom */
+        order: 2; 
         width: 85%; 
         max-width: 350px;
-        margin: 50px auto 0; /* 50px gap from description */
+        margin: 50px auto 0; 
         flex: auto; 
     }
 
-    /* Shrink main title for small screens */
     .main-title { font-size: 2.5rem; }
 }
 
@@ -177,7 +173,6 @@ p[id^="out-"] { font-family: 'Oswald', sans-serif; font-weight: 800; margin-top:
     transition: background 0.4s ease, border-color 0.4s ease;
 }
 
-/* Hover Sheen Effect */
 .info-box:hover, .box:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%), rgba(20, 20, 20, 0.6);
     border-color: rgba(255, 255, 255, 0.25);

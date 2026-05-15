@@ -5,10 +5,9 @@ function getVal(id) {
     return (!isNaN(val) && val > 0) ? val : null;
 }
 
-// Fixed helper to trigger the "reveal-result" animation defined in CSS
 function triggerResult(el) {
     el.classList.remove('reveal-result');
-    void el.offsetWidth; // Trigger reflow to restart animation
+    void el.offsetWidth; 
     el.classList.add('reveal-result');
 }
 

@@ -10,7 +10,6 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-        // We will render the app directly here once the file is loaded
         window.addEventListener('load', () => {
             const root = ReactDOM.createRoot(document.getElementById('workout-root'));
             root.render(<WorkoutPlanner />);
@@ -21,7 +20,6 @@
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-ring" id="cursor-ring"></div>
     
-    <!-- Navbar remains standard HTML -->
     <section id="navbar">
         <a href="about.html">ABOUT</a>
         <a href="workout.html" id="active">WORKOUT</a>
@@ -30,13 +28,10 @@
         <a href="contact.html">CONTACT</a>    
     </section>
 
-    <!-- React will inject the planner here -->
     <div id="workout-root"></div>
 
-    <!-- Load your JSX file as a "babel" script -->
     <script type="text/babel" data-presets="react" src="workout.jsx"></script>
 
-    <!-- The Connector -->
     <script type="text/babel">
         function renderApp() {
             if (typeof WorkoutPlanner !== 'undefined') {
@@ -44,7 +39,6 @@
                 const root = ReactDOM.createRoot(container);
                 root.render(<WorkoutPlanner />);
             } else {
-                // If the file isn't ready, try again in 50ms
                 setTimeout(renderApp, 50);
             }
         }
