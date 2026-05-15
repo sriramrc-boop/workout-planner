@@ -1,3 +1,20 @@
+.about-container {
+    background: #050505;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    padding: 0 10% 100px;
+    overflow-x: hidden;
+    position: relative;
+}
+.about-container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .hero-section {
     height: 85vh;
     display: flex;
@@ -5,25 +22,17 @@
     justify-content: center;
     align-items: flex-start;
 }
-
 .main-title {
     font-size: clamp(5rem, 15vw, 10rem);
     line-height: 0.8;
     margin: 0;
     padding-top: 200px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-
 .main-title span { color: crimson; }
+.subtitle { color: crimson; letter-spacing: 5px; margin-top: 20px; font-size: 1.2rem; }
 
-.subtitle {
-    color: crimson;
-    letter-spacing: 5px;
-    margin-top: 20px;
-    font-size: 1.2rem;
-}
-
- .info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
- .info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
+.info-section { padding: 100px 0; border-bottom: 1px solid #1a1a1a; }
 .label { color: crimson; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 20px; }
 .title-bg { font-size: 3rem; margin-bottom: 40px; text-transform: uppercase; }
 
@@ -36,34 +45,30 @@
     line-height: 1.8;
 }
 
- .grid-section {
+.grid-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin: 100px 0;
 }
-
 .grid-card {
     background: #0f0f0f;
     padding: 40px;
     border: 1px solid #1a1a1a;
     transition: 0.4s;
 }
-
-.grid-card:hover { border-color: crimson; transform: translateY(-10px); }
+.grid-card:hover {
+    border-color: crimson;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px rgba(220,20,60,0.15);
+}
 .grid-card h3 { color: crimson; margin-bottom: 20px; }
 
- .arch-list { margin-top: 40px; }
- .arch-list { margin-top: 40px; }
+.arch-list { margin-top: 40px; }
 .arch-item { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid crimson; }
 .arch-item h4 { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
 
- .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .creator-card {
     background: #0f0f0f;
     padding: 40px 20px;
@@ -71,113 +76,67 @@
     border-bottom: 4px solid #1a1a1a;
     transition: 0.4s;
 }
-
 .creator-card:hover { border-color: crimson; background: #141414; }
 .avatar {
-    width: 80px; height: 80px; background: #1a1a1a; margin: 0 auto 20px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    color: crimson; font-weight: bold; border: 1px solid crimson;
+    width: 80px; height: 80px;
+    background: #1a1a1a;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: crimson; font-weight: bold;
+    border: 1px solid crimson;
 }
 
- .reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-container {
-    background-color: #050505;
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    padding: 0 10% 100px;
-    overflow-x: hidden;
-    background-size: 150% 150%;
-    position: relative;
-    background: #050505; /* Fallback color */
-}
-
- .about-container::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: 40px 40px;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* The container starts invisible and shifted down */
 .reveal {
     opacity: 0;
-    transform: translateY(50px); /* Adjust this for more/less travel distance */
-    filter: blur(4px); /* Optional: provides a soft focus effect as it appears */
-    transition: 
-        opacity 1s ease-out,
-        transform 1s cubic-bezier(0.215, 0.61, 0.355, 1),
-        filter 0.8s ease-out;
+    transform: translateY(50px);
+    filter: blur(4px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.215,0.61,0.355,1), filter 0.8s ease-out;
     will-change: transform, opacity;
 }
+.reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
 
-/* The active state: snaps to perfect position and clarity */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-}
-
- .grid-card:hover {
-    border-color: crimson;
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 30px rgba(220, 20, 60, 0.15);
-}
-
-.video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Matches the height of the about-container */
-    z-index: 0;
-    pointer-events: none;
-}
-
-.video-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures video fills space without stretching */
-    opacity: 0.6; /* Adjust this to make text more or less readable */
-}
-
-/* Crucial: Dark overlay to ensure your white/crimson text pops */
+.video-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.video-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
 .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom, 
-        rgba(5, 5, 5, 0.8) 0%, 
-        rgba(5, 5, 5, 0.4) 50%, 
-        rgba(5, 5, 5, 0.9) 100%
-    );
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.9) 100%);
 }
 
-/* Force all content to sit ABOVE the video */
-.hero-section, 
-.info-section, 
-.grid-section, 
-.team-section {
-    position: relative;
-    z-index: 1;
+.hero-section, .info-section, .grid-section, .team-section { position: relative; z-index: 1; }
+
+
+@media (max-width: 1024px) {
+    .about-container { padding: 0 6% 80px; }
+    .main-title { padding-top: 140px; }
+    .title-bg { font-size: 2.4rem; }
+    .content-split { gap: 30px; font-size: 1.1rem; }
+    .grid-section { grid-template-columns: repeat(2, 1fr); margin: 70px 0; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .arch-item h4 { font-size: 1.3rem; }
 }
 
-/* Extra punch for the main title over video */
-.main-title {
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+@media (max-width: 640px) {
+    .about-container { padding: 0 5% 60px; }
+    .hero-section { height: auto; min-height: 100svh; padding-bottom: 60px; }
+    .main-title { padding-top: 100px; font-size: clamp(3.5rem, 18vw, 6rem); line-height: 0.85; }
+    .subtitle { letter-spacing: 3px; font-size: 1rem; }
+    .info-section { padding: 60px 0; }
+    .title-bg { font-size: 1.8rem; margin-bottom: 24px; }
+    .content-split { grid-template-columns: 1fr; gap: 20px; font-size: 1rem; }
+    .grid-section { grid-template-columns: 1fr; gap: 16px; margin: 50px 0; }
+    .grid-card { padding: 24px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .creator-card { padding: 24px 12px; }
+    .avatar { width: 60px; height: 60px; }
+    .arch-item { margin-bottom: 20px; }
+    .arch-item h4 { font-size: 1.1rem; }
+    .reveal { filter: none; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+}
+
+
+@media (max-width: 380px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .main-title { font-size: clamp(3rem, 20vw, 4.5rem); }
 }

@@ -1,6 +1,4 @@
-*{
-    font-family: "Oswald", sans-serif;
-}
+* { font-family: "Oswald", sans-serif; }
 
 body {
     color: white;
@@ -10,6 +8,7 @@ body {
     box-sizing: border-box;
 }
 
+/* ─── NAVBAR ────────────────────────────────────────── */
 #navbar {
     display: flex;
     justify-content: space-around;
@@ -23,7 +22,6 @@ body {
 }
 
 #navbar a:not(#logo a) {
-    position: relative;
     text-decoration: none;
     color: white;
     background: linear-gradient(to right, crimson 50%, white 50%);
@@ -32,10 +30,12 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background-position 0.4s ease;
+    font-size: clamp(16px, 3vw, 18px);
+    letter-spacing: clamp(2px, 0.4vw, 4px);
+    font-weight: 500;
 }
 
 #navbar a:not(#logo a):hover {
-    color: crimson;
     text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
     background-position: left bottom;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 #logo a {
-    font-size: 45px;
+    font-size: clamp(24px, 4vw, 35px);
     margin: 0;
     line-height: 1;
     text-decoration: none;
@@ -57,50 +57,29 @@ body {
     font-weight: 800;
     display: inline-block;
     transform-origin: top center;
-    transition:
-        transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
-        text-shadow 0.4s ease;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-#logo a:hover {
-    transform: translateY(10px) scale(1.8);
-}
+#logo a:hover { transform: translateY(10px) scale(1.8); }
+#logo span { color: crimson; }
 
-#logo span {
-    color: crimson;
-}
-
+/* ─── PAGE TRANSITIONS ──────────────────────────────── */
 /*
-    Page Transition Animation
-    IMPORTANT: Must stay on .page-wrapper, NOT body.
-    A transform on body traps position:fixed children (the cursor)
-    inside a new containing block, breaking fixed positioning.
+    IMPORTANT: Animation on .page-wrapper, NOT body.
+    A transform on body breaks position:fixed (cursor).
 */
-.page-wrapper {
-    animation: slideIn 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-}
-
-.fade-out {
-    animation: slideOut 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-}
+.page-wrapper { animation: slideIn 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
+.fade-out     { animation: slideOut 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
 
 @keyframes slideIn {
     from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    to   { transform: translateX(0); opacity: 1; }
 }
-
 @keyframes slideOut {
     from { transform: translateX(0); opacity: 1; }
-    to { transform: translateX(-100%); opacity: 0; }
+    to   { transform: translateX(-100%); opacity: 0; }
 }
 
-.hidden-scroll {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.show-scroll {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* ─── SCROLL REVEAL ─────────────────────────────────── */
+.hidden-scroll { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.show-scroll   { opacity: 1; transform: translateY(0); }
